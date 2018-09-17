@@ -1,12 +1,10 @@
-
-
+package org.fundacionjala.coding.org.fundacionjala.coding.jorge;
 import java.util.Enumeration;
 import java.util.Vector;
-
-class Customer {
+public class Customer {
     private String _name;
     private Vector _rentals = new Vector();
-    
+
     public Customer(String name) {
         _name = name;
     }
@@ -26,7 +24,7 @@ class Customer {
         Enumeration rentals = _rentals.elements();
         String result = "Rental Record for " + getName() + "\n";
         System.out.println("Rental Record for " + getName());
-        
+
         while (rentals.hasMoreElements()) {
             double thisAmount = 0;
             Rental each = (Rental) rentals.nextElement();

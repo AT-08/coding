@@ -1,6 +1,6 @@
+package org.fundacionjala.coding.org.fundacionjala.coding.jorge;
 
-
-class Rental {
+public class Rental {
     private Movie _movie;
     private int _daysRented;
 
@@ -8,12 +8,12 @@ class Rental {
         _movie = movie;
         _daysRented = daysRented;
     }
-    
+
     public Rental(MovieRegular movie, int daysRented) {
         _movie = movie;
         _daysRented = daysRented;
     }
-    
+
     public Rental(MovieChildren movie, int daysRented) {
         _movie = movie;
         _daysRented = daysRented;
