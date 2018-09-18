@@ -1,6 +1,6 @@
 package org.fundacionjala.coding.nestor;
 
-public enum MovieCode {
+public enum MovieType {
     CHILDRENS,
     NEW_RELEASE,
     REGULAR;
