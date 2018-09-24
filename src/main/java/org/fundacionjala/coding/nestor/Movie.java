@@ -5,6 +5,8 @@ package org.fundacionjala.coding.nestor;
  */
 
 public abstract class Movie {
+    protected static final double FACTOR = 1.5;
+    protected static final int DAYS = 3;
     private String title;
     private MovieType movieType;
 
@@ -22,4 +24,5 @@ public abstract class Movie {
     }
 
     public abstract double getPrice(int daysRented);
+
 }

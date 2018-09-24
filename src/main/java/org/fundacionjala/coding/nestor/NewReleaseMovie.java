@@ -1,5 +1,8 @@
 package org.fundacionjala.coding.nestor;
 
+/**
+ *
+ */
 public class NewReleaseMovie extends Movie {
 
     public NewReleaseMovie(String title) {
@@ -8,7 +11,7 @@ public class NewReleaseMovie extends Movie {
 
     @Override
     public double getPrice(int daysRented) {
-        return daysRented * 3;
+        return daysRented * DAYS;
     }
 
 }

@@ -1,11 +1,10 @@
 package org.fundacionjala.coding.nestor;
 
-public class RegularMovie extends Movie {
-    private static double PRICE = 2;
+public class ChildrenMovie extends Movie {
+    private static double PRICE = 1.5;
 
-
-    public RegularMovie(String title) {
-        super(title, MovieType.REGULAR);
+    public ChildrenMovie(String title) {
+        super(title, MovieType.CHILDRENS);
     }
 
     @Override
