@@ -1,18 +1,32 @@
 package org.fundacionjala.coding.nestor;
 
+/**
+ * Implement movies children kind.
+ */
 public class ChildrenMovie extends Movie {
-    private static double PRICE = 1.5;
+  public static final double PRICE = 1.5;
 
-    public ChildrenMovie(String title) {
-        super(title, MovieType.CHILDRENS);
+  /**
+   * Constructor.
+   *
+   * @param title type string.
+   */
+  public ChildrenMovie(final String title) {
+    super(title, MovieType.CHILDRENS);
+  }
+
+  /**
+   * Method to get price for this kind of movies.
+   *
+   * @param daysRented type integer.
+   * @return Price.
+   */
+  @Override
+  public double getPrice(int daysRented) {
+    if (daysRented > DAYS) {
+      return PRICE + (daysRented - DAYS) * FACTOR;
     }
 
-    @Override
-    public double getPrice(int daysRented) {
-        if (daysRented > DAYS) {
-            PRICE += (daysRented - DAYS) * FACTOR;
-        }
-
-        return PRICE;
-    }
+    return PRICE;
+  }
 }
