@@ -1,10 +1,13 @@
 package org.fundacionjala.coding.nestor;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  * Main class to run this project.
  */
-public final class Main {
-  public static final int DAYS_RENTER = 3;
+final class Main {
+  public final static int DAYS_RENTER = 3;
+  private final static Logger logger = Logger.getLogger("");
 
   /**
    * Static method, main method.
@@ -15,7 +18,6 @@ public final class Main {
     Movie terminator = new RegularMovie("Terminator");
     Movie srek = new ChildrenMovie("Srek");
     Movie frozen = new ChildrenMovie("Frozen");
-    Movie goldFather = new RegularMovie("The Gold Father");
     Movie chicago = new RegularMovie("Chicago");
     Movie ralph = new NewReleaseMovie("Ralph breaks the Internet");
 
@@ -26,6 +28,6 @@ public final class Main {
     customer.addMovie(srek);
     customer.addMovie(frozen);
     customer.addMovie(ralph);
-    System.out.println(customer.statement());
+    logger.log(Level.INFO, customer.statement());
   }
 }

@@ -22,7 +22,7 @@ public class NewReleaseMovie extends Movie {
    */
   @Override
   public double getPrice(int daysRented) {
-    return daysRented * DAYS;
+    return (double)(daysRented * DAYS);
   }
 
 }
