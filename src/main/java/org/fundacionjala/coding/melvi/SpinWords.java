@@ -1,4 +1,4 @@
-package org.fundacionjala.coding;
+package org.fundacionjala.coding.melvi;
 
 /**
  *
@@ -22,4 +22,3 @@ public class SpinWords {
         return String.join(DELIMITER, words);
     }
 }
-

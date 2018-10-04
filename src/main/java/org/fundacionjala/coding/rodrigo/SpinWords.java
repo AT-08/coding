@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.reversewords;
+package org.fundacionjala.coding.rodrigo;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;

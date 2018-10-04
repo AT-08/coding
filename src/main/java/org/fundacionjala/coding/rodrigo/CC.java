@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.charcount;
+package org.fundacionjala.coding.rodrigo;
 
 /**
  *  The goal of this kata is to write a function that takes two inputs: a string and a character.

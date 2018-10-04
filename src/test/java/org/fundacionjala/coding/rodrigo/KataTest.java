@@ -1,10 +1,8 @@
-package org.fundacionjala.coding.testsortdescending;
+package org.fundacionjala.coding.rodrigo;
 
-import org.fundacionjala.coding.sortdescending.Kata;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-
 
 /**
  * Test about the Kata.

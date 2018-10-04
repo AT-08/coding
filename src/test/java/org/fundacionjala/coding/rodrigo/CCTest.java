@@ -1,8 +1,6 @@
-package org.fundacionjala.coding.charcounttest;
+package org.fundacionjala.coding.rodrigo;
 
-import org.fundacionjala.coding.charcount.CC;
 import org.junit.Test;
-
 
 import static org.junit.Assert.assertEquals;
 

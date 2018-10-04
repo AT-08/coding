@@ -1,11 +1,9 @@
-package org.fundacionjala.coding.testreversewords;
+package org.fundacionjala.coding.rodrigo;
 
-import org.fundacionjala.coding.reversewords.SpinWords;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-
 
 /**
  * Testing.

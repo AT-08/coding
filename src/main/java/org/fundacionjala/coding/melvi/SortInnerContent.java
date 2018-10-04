@@ -1,4 +1,4 @@
-package org.fundacionjala.coding;
+package org.fundacionjala.coding.melvi;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -48,4 +48,3 @@ public final class SortInnerContent {
 
 
 }
-

@@ -1,6 +1,8 @@
-package org.fundacionjala.coding;
+package org.fundacionjala.coding.melvi;
+
 import org.junit.Before;
 import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 
 /**
