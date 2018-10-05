@@ -1,10 +1,8 @@
-package org.fundacionjala.coding.testvowelcount;
+package org.fundacionjala.coding.rodrigo;
 
-import org.fundacionjala.coding.vowelcount.Vowels;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-
 
 /**
  * Test vowels.

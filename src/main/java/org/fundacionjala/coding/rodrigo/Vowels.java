@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.vowelcount;
+package org.fundacionjala.coding.rodrigo;
 
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
  */
 public final class Vowels {
 
-    private static final List<Character> VOWELS = Arrays.asList(
+    private static final List<Character> VOWELS_LIST = Arrays.asList(
             'a',
             'e',
             'i',
@@ -29,7 +29,7 @@ public final class Vowels {
         int vowelsCount = 0;
         for (int i = 0; i < str.length(); i++) {
             char a = str.charAt(i);
-            if (VOWELS.contains(a)) {
+            if (VOWELS_LIST.contains(a)) {
                 vowelsCount++;
             }
         }

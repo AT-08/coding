@@ -6,18 +6,13 @@ import java.util.stream.Collectors;
 /**
  * Kata spinning words.
  */
-public final class SpinWords {
-    /**
-     * Empty Constructor.
-     */
-    public SpinWords() {
-    }
+class SpinWords {
 
     /**
      * @param sentence Input
      * @return The correct sentence.
      */
-    public String spinWords(final String sentence) {
+    String spinWords(final String sentence) {
         final int wordFlag = 4;
         return Arrays.stream(sentence.split(" "))
                 .map(word -> word.length() > wordFlag

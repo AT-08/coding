@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 /**
  * Kata about Sort the inner content of a sentence.
  */
-public final class Kata {
+final class Kata {
     /**
      * Empty constructor.
      */
@@ -19,7 +19,7 @@ public final class Kata {
      * @param words Input Word
      * @return Sort the inner content of the word
      */
-    public static String sortTheInnerContent(final String words) {
+    static String sortTheInnerContent(final String words) {
         String[] origWords = words.split(" ");
         for (int i = 0; i < origWords.length; i++) {
             if (origWords[i].length() > 2) {
