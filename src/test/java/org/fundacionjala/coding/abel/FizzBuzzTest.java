@@ -102,7 +102,7 @@ public class FizzBuzzTest {
     @Test
     public void test8() {
         final int num3 = 52;
-        assertEquals("FizzBuzz", list2.get(num3));
+        assertEquals(FIZZ_BUZZ, list2.get(num3));
     }
 
 }
