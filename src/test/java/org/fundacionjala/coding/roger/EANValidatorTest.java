@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 
 public class EANValidatorTest {
 
-    protected EANValidator eanValidator;
+    private EANValidator eanValidator;
 
     /**
      * SETUP.

@@ -6,21 +6,15 @@ package org.fundacionjala.coding.roger;
  */
 public class EANValidator {
 
-    static final int TWO = 2;
-    static final int THREE = 3;
-    static final int TEN = 10;
-
-    /**
-     * Empty constructor.
-     */
-    private EANValidator() {
-    }
+    private static final int TWO = 2;
+    private static final int THREE = 3;
+    private static final int TEN = 10;
 
     /**
      *@param eanCode input String.
      *@return return boolean validate EAN
      */
-    public static boolean validate(final String eanCode) {
+    boolean validate(final String eanCode) {
         int sum = 0;
         String[] letter = eanCode.split("");
         for (int i = 0; i < eanCode.length() - 1; i++) {
