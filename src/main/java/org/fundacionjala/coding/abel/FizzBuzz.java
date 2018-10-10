@@ -1,7 +1,5 @@
 package org.fundacionjala.coding.abel;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -16,34 +14,66 @@ public class FizzBuzz {
     private static final int LENGTH = 100;
 
     /**
-     * @return value of return
+     * @param indicadio indicador de entrada
+     * @return value if return
      */
-    public List<String> fizzbuzz() {
-        List<String> list = new ArrayList<String>();
+    public String fizzBuzz(int indicadio) {
+        String[] container = generated();
+        return container[indicadio - 1];
+    }
+
+
+    /**
+     * @return value og return
+     */
+    public String[] generated() {
+        String[] a = new String[LENGTH];
+        int cont = 0;
         for (int i = 1; i <= LENGTH; i++) {
-            list.add(i % FIZZ_NUM == 0 && i % BUZZ_NUM == 0 ? FIZZBUZZ
+            a[cont] = i % FIZZ_NUM == 0 && i % BUZZ_NUM == 0 ? FIZZBUZZ
                     : i % FIZZ_NUM == 0 ? FIZZ
                     : i % BUZZ_NUM == 0 ? BUZZ
-                    : String.valueOf(i));
+                    : String.valueOf(i);
+            System.out.println(a[cont]);
+            cont = cont + 1;
         }
-        return list;
+        return a;
     }
 
     /**
-     * @return VALUE OF RETURN
+     * @param indicadio vaue of input
+     * @return value return
      */
-    public List<String> fizzBuzz2() {
-        List<String> list = new ArrayList<>();
+    public String fizzBuzz2(int indicadio) {
+
+        String[] container = generated2();
+
+        return container[indicadio - 1];
+
+
+    }
+
+    /**
+     * @return value of return
+     */
+    public String[] generated2() {
+
+        String[] a = new String[LENGTH];
+        int cont = 0;
         final int num1 = 53;
         final int num2 = 35;
         final int num3 = 0;
-        for (int i = 1; i <= LENGTH; i++) {
 
-            list.add(i == num1 || i == num2 ? FIZZBUZZ
+        for (int i = 1; i <= LENGTH; i++) {
+            a[cont] = i == num1 || i == num2 ? FIZZBUZZ
                     : i % FIZZ_NUM == num3 || String.valueOf(i).contains("3") ? FIZZ
                     : i % FIZZ_NUM == num3 || String.valueOf(i).contains("5") ? BUZZ
-                    : String.valueOf(i));
+                    : String.valueOf(i);
+            System.out.println(a[cont]);
+            cont = cont + 1;
         }
-        return list;
+        return a;
     }
+
+
 }
