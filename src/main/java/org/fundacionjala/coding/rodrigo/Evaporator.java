@@ -11,12 +11,7 @@ package org.fundacionjala.coding.rodrigo;
  * as you wish. Some people might prefer to reason with content, some other with percentages only.
  * It's up to you but you must keep it as a parameter because the tests have it as an argument.
  */
-public final class Evaporator {
-    /**
-     * Empty constructor.
-     */
-    protected Evaporator() {
-    }
+public class Evaporator {
 
     /**
      * @param content    in Unit of volume.
@@ -24,7 +19,7 @@ public final class Evaporator {
      * @param threshold  the limit.
      * @return the days of evaporation.
      */
-    public static int evaporator(final double content, final double evapPerDay, final int threshold) {
+    public int evaporator(final double content, final double evapPerDay, final int threshold) {
         final int oneHundred = 100;
         double contentPerDay = content;
         int days = 0;

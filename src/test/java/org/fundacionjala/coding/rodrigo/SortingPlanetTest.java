@@ -4,8 +4,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-
 
 /**
  * Test for SortPlanet.
@@ -36,7 +34,7 @@ public class SortingPlanetTest {
      */
     @Test
     public void testSortArray2() {
-        final Integer[] actI2 = new Integer[]{9, 2, 4, 7, 3};
+        final Integer[] actI2 = {9, 2, 4, 7, 3};
         final int[] expI2 = {2, 7, 4, 3, 9};
         assertArrayEquals(expI2, sortingPlanet.sortTwisted37(actI2));
     }
@@ -46,19 +44,9 @@ public class SortingPlanetTest {
      */
     @Test
     public void testSortArray3() {
-        final Integer[] actI3 = new Integer[]{12, 13, 14};
+        final Integer[] actI3 = {12, 13, 14};
         final int[] expI3 = {12, 14, 13};
         assertArrayEquals(expI3, sortingPlanet.sortTwisted37(actI3));
-    }
-
-    /**
-     * Test for verify the correct substitution.
-     */
-    @Test
-    public void testReplace37() {
-        final int exp = 1371;
-        final int act = 1731;
-        assertEquals(exp, sortingPlanet.replace37(act));
     }
 
 }

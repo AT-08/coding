@@ -5,7 +5,7 @@ import java.util.StringJoiner;
 /**
  * Better encryptation than cesar.
  */
-public final class Vigenere extends Encryption {
+public final class Vigenere implements Encryption {
     /**
      * Vigenere encode.
      *

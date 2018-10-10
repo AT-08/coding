@@ -41,15 +41,4 @@ public class Twist37Test {
         final Integer[] numbersTest3 = new Integer[]{9, 2, 4, 7, 3};
         assertArrayEquals(numbersTest3Exp, Twist37.sortTwisted37(numbersTest3));
     }
-
-    /**
-     *
-     */
-    @Test
-    public void basicTest4() {
-
-        final Integer[] numbersTest3Exp = new Integer[]{2, 7, 4, 3, 9};
-        final Integer[] numbersTest3 = new Integer[]{9, 2, 4, 7, 3};
-        assertArrayEquals(numbersTest3Exp, Twist37.sortTwisted37(numbersTest3));
-    }
 }
