@@ -24,7 +24,6 @@ public class HighestAndLowest {
                 max = num;
             }
         }
-
         return String.format("%d %d", max, mini);
     }
 }
