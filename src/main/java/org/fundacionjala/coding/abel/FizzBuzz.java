@@ -34,8 +34,7 @@ public class FizzBuzz {
                     : i % FIZZ_NUM == 0 ? FIZZ
                     : i % BUZZ_NUM == 0 ? BUZZ
                     : String.valueOf(i);
-            System.out.println(a[cont]);
-            cont = cont + 1;
+            cont++;
         }
         return a;
     }
@@ -69,8 +68,7 @@ public class FizzBuzz {
                     : i % FIZZ_NUM == num3 || String.valueOf(i).contains("3") ? FIZZ
                     : i % FIZZ_NUM == num3 || String.valueOf(i).contains("5") ? BUZZ
                     : String.valueOf(i);
-            System.out.println(a[cont]);
-            cont = cont + 1;
+            cont++;
         }
         return a;
     }
