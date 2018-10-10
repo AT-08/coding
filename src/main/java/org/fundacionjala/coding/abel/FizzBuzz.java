@@ -30,11 +30,10 @@ public class FizzBuzz {
     }
 
     /**
-     *
      * @return VALUE OF RETURN
      */
     public List<String> fizzBuzz2() {
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         final int num1 = 53;
         final int num2 = 35;
         final int num3 = 0;
