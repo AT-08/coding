@@ -30,10 +30,16 @@ public class FizzBuzz {
         String[] a = new String[LENGTH];
         int cont = 0;
         for (int i = 1; i <= LENGTH; i++) {
-            a[cont] = i % FIZZ_NUM == 0 && i % BUZZ_NUM == 0 ? FIZZBUZZ
-                    : i % FIZZ_NUM == 0 ? FIZZ
-                    : i % BUZZ_NUM == 0 ? BUZZ
-                    : String.valueOf(i);
+            if (i % FIZZ_NUM == 0 && i % BUZZ_NUM == 0) {
+                a[cont] = FIZZBUZZ;
+            } else if (i % FIZZ_NUM == 0) {
+                a[cont] = FIZZBUZZ;
+                a[cont] = FIZZ;
+            } else if (i % BUZZ_NUM == 0) {
+                a[cont] = BUZZ;
+            } else {
+                a[cont] = String.valueOf(i);
+            }
             cont++;
         }
         return a;
@@ -64,14 +70,18 @@ public class FizzBuzz {
         final int num3 = 0;
 
         for (int i = 1; i <= LENGTH; i++) {
-            a[cont] = i == num1 || i == num2 ? FIZZBUZZ
-                    : i % FIZZ_NUM == num3 || String.valueOf(i).contains("3") ? FIZZ
-                    : i % FIZZ_NUM == num3 || String.valueOf(i).contains("5") ? BUZZ
-                    : String.valueOf(i);
+            if (i == num1 || i == num2) {
+                a[cont] = FIZZBUZZ;
+            } else if (i % FIZZ_NUM == num3 || String.valueOf(i).contains("3")) {
+                a[cont] = FIZZBUZZ;
+                a[cont] = FIZZ;
+            } else if (i % FIZZ_NUM == num3 || String.valueOf(i).contains("5")) {
+                a[cont] = BUZZ;
+            } else {
+                a[cont] = String.valueOf(i);
+            }
             cont++;
         }
         return a;
     }
-
-
 }
