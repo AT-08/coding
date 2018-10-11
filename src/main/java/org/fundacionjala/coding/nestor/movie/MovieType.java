@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.nestor;
+package org.fundacionjala.coding.nestor.movie;
 
 /**
  * Enumerable Movie Type.

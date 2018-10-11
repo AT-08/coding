@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.nestor;
+package org.fundacionjala.coding.nestor.movie;
 
 /**
  * This abstract Movie Class allow implement get Price depends on Movie Type.
@@ -6,8 +6,9 @@ package org.fundacionjala.coding.nestor;
 public abstract class Movie {
   protected static final double FACTOR = 1.5;
   protected static final int DAYS = 3;
-  private String title;
-  private MovieType movieType;
+  protected static final int RENTER_POINTS = 1;
+  String title;
+  int daysRented;
 
   /**
    * Constructor.
@@ -15,9 +16,9 @@ public abstract class Movie {
    * @param title type string.
    * @param movieType type MovieType.
    */
-  public Movie(final String title, final MovieType movieType) {
+  public Movie(final String title, final int daysRented) {
     this.title = title;
-    this.movieType = movieType;
+    this.daysRented = daysRented;
   }
 
   /**
@@ -30,20 +31,13 @@ public abstract class Movie {
   }
 
   /**
-   * Method to get movie type.
-   *
-   * @return movie type.
-   */
-  public MovieType getMovieType() {
-    return movieType;
-  }
-
-  /**
    * Abstract method. To implement get price depends on kind of movie.
    *
    * @param daysRented type integer.
    * @return price type double.
    */
-  public abstract double getPrice(int daysRented);
+  public abstract double getPrice();
+
+  public abstract int getRenterPoints();
 
 }

@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.nestor;
+package org.fundacionjala.coding.nestor.movie;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,16 +9,14 @@ import java.util.List;
 public class Rental {
   private List<Movie> movieList = new ArrayList<>();
   private int daysRented;
-  private int frequentRenterPoints;
 
   /**
    * Constructor.
    *
    * @param daysRented type integer.
    */
-  public Rental(int daysRented) {
+  public Rental(final int daysRented) {
     this.daysRented = daysRented;
-    this.frequentRenterPoints = 0;
   }
 
   /**
@@ -35,15 +33,11 @@ public class Rental {
    *
    * @return total for this rental.
    */
-  public double getCharge() {
+  public double calculateCharge() {
     double charge = 0;
 
     for (Movie item : this.movieList) {
-      charge += item.getPrice(this.daysRented);
-      if (item.getMovieType() == MovieType.NEW_RELEASE && daysRented > 1) {
-        frequentRenterPoints++;
-      }
-      frequentRenterPoints++;
+      charge += item.getPrice();
     }
 
     return charge;
@@ -54,8 +48,14 @@ public class Rental {
    *
    * @return frequent renter points.
    */
-  public int getFrequentRenterPoints() {
-    return frequentRenterPoints;
+  public int calculateRenterPoints() {
+    int renterPoints = 0;
+
+    for (Movie item: this.movieList) {
+      renterPoints += item.getRenterPoints();
+    }
+
+    return renterPoints;
   }
 
 }
