@@ -33,7 +33,6 @@ public class FizzBuzz {
             if (i % FIZZ_NUM == 0 && i % BUZZ_NUM == 0) {
                 a[cont] = FIZZBUZZ;
             } else if (i % FIZZ_NUM == 0) {
-                a[cont] = FIZZBUZZ;
                 a[cont] = FIZZ;
             } else if (i % BUZZ_NUM == 0) {
                 a[cont] = BUZZ;
@@ -73,7 +72,6 @@ public class FizzBuzz {
             if (i == num1 || i == num2) {
                 a[cont] = FIZZBUZZ;
             } else if (i % FIZZ_NUM == num3 || String.valueOf(i).contains("3")) {
-                a[cont] = FIZZBUZZ;
                 a[cont] = FIZZ;
             } else if (i % FIZZ_NUM == num3 || String.valueOf(i).contains("5")) {
                 a[cont] = BUZZ;
