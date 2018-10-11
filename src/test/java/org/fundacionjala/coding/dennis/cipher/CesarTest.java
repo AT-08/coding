@@ -1,19 +1,22 @@
-package org.fundacionjala.coding.dennis;
+package org.fundacionjala.coding.dennis.cipher;
+
 import org.junit.Before;
 import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
+
 /**
  *
  */
-public class CesarCrypTest {
-    private CesarCryp test;
+public class CesarTest {
+    private Cesar test;
 
     /**
      *
      */
     @Before
     public void initial() {
-        test = new CesarCryp();
+        test = new Cesar();
     }
     /**
      *
@@ -21,7 +24,7 @@ public class CesarCrypTest {
     @Test
     public void testCryptoNormal1() {
         String exp = "KROD";
-        String res = test.crypto("3", "HOLA");
+        String res = test.encode("3", "HOLA");
         assertEquals(exp, res);
     }
     /**
@@ -30,7 +33,7 @@ public class CesarCrypTest {
     @Test
     public void testCryptoNormal2() {
         String exp = "ETWWT";
-        String res = test.crypto("5", "ZORRO");
+        String res = test.encode("5", "ZORRO");
         assertEquals(exp, res);
     }
     /**
@@ -39,7 +42,7 @@ public class CesarCrypTest {
     @Test
     public void testCryptoSpace() {
         String exp = "MTQF ETWWT";
-        String res = test.crypto("5", "HOLA ZORRO");
+        String res = test.encode("5", "HOLA ZORRO");
         assertEquals(exp, res);
     }
     /**
@@ -48,7 +51,7 @@ public class CesarCrypTest {
     @Test
     public void testCryptoNull() {
         String exp = "";
-        String res = test.crypto("5", "");
+        String res = test.encode("5", "");
         assertEquals(exp, res);
     }
     /**
@@ -57,7 +60,7 @@ public class CesarCrypTest {
     @Test
     public void testCryptoKeyNeg() {
         String exp = "BHMD";
-        String res = test.crypto("-1", "CINE");
+        String res = test.encode("-1", "CINE");
         assertEquals(exp, res);
     }
     /**
@@ -66,7 +69,7 @@ public class CesarCrypTest {
     @Test
     public void testCryptoKeyNeg2() {
         String exp = "ZYLBY";
-        String res = test.crypto("-2", "BANDA");
+        String res = test.encode("-2", "BANDA");
         assertEquals(exp, res);
     }
     /**
@@ -75,7 +78,7 @@ public class CesarCrypTest {
     @Test
     public void testDeCryptoNormal1() {
         String exp = "HOLA";
-        String res = test.decrypto("3", "KROD");
+        String res = test.decode("3", "KROD");
         assertEquals(exp, res);
     }
     /**
@@ -84,7 +87,7 @@ public class CesarCrypTest {
     @Test
     public void testDeCryptoNormal2() {
         String exp = "ZORRO";
-        String res = test.decrypto("5", "ETWWT");
+        String res = test.decode("5", "ETWWT");
         assertEquals(exp, res);
     }
     /**
@@ -93,7 +96,7 @@ public class CesarCrypTest {
     @Test
     public void testDeCryptoSpace() {
         String exp = "HOLA ZORRO";
-        String res = test.decrypto("5", "MTQF ETWWT");
+        String res = test.decode("5", "MTQF ETWWT");
         assertEquals(exp, res);
     }
 }

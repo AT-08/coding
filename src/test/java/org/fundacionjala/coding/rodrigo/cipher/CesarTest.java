@@ -1,6 +1,5 @@
-package org.fundacionjala.coding.rodrigo;
+package org.fundacionjala.coding.rodrigo.cipher;
 
-import org.fundacionjala.coding.rodrigo.cipher.Cesar;
 import org.junit.Before;
 import org.junit.Test;
 

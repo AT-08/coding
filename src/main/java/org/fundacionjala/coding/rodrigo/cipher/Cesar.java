@@ -3,7 +3,7 @@ package org.fundacionjala.coding.rodrigo.cipher;
 /**
  * Cifrado Cesar.
  */
-public final class Cesar implements Encryption {
+public final class Cesar implements Cipher {
     @Override
     public String encode(final String message, final String key) {
         char[] parts = message.trim().toUpperCase().replaceAll("[^a-zA-Z0]", "").toCharArray();

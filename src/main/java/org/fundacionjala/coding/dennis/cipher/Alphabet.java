@@ -1,14 +1,14 @@
-package org.fundacionjala.coding.dennis;
+package org.fundacionjala.coding.dennis.cipher;
 
 /**
  *
  */
-public class Alphabet {
+public final class Alphabet {
     public static final String ALPHAS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     /**
      *
      */
-    protected Alphabet() {
+    private Alphabet() {
     }
 }

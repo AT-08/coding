@@ -3,7 +3,7 @@ package org.fundacionjala.coding.rodrigo.cipher;
 /**
  * Abstract class.
  */
-interface Encryption {
+interface Cipher {
     /**
      * @param message input message.
      * @param key     num rot.

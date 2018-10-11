@@ -1,9 +1,9 @@
-package org.fundacionjala.coding.dennis;
+package org.fundacionjala.coding.dennis.cipher;
 
 /**
  *
  */
-public interface Encrypto {
+public interface Cipher {
 
      /**
      *
@@ -11,7 +11,7 @@ public interface Encrypto {
      * @param mess mensage.
      * @return Cadena codificada.
      */
-    String crypto(String key, String mess);
+    String encode(String key, String mess);
 
     /**
      *
@@ -19,7 +19,7 @@ public interface Encrypto {
      * @param encMess mensaje encriptado.
      * @return Cadena codificada.
      */
-    String decrypto(String key, String encMess);
+    String decode(String key, String encMess);
 
     /**
      *
