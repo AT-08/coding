@@ -8,7 +8,7 @@ import java.util.Arrays;
 /**
  * Empty constructor.
  */
-public final class Exam1 {
+public final class EanCodeValidator {
 
     private static final int TWO = 2;
     private static final int THREE = 3;
@@ -17,7 +17,7 @@ public final class Exam1 {
     /**
      *
      */
-    private Exam1() {
+    private EanCodeValidator() {
     }
 
     /**

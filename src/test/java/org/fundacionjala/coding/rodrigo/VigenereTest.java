@@ -1,5 +1,6 @@
 package org.fundacionjala.coding.rodrigo;
 
+import org.fundacionjala.coding.rodrigo.cipher.Vigenere;
 import org.junit.Before;
 import org.junit.Test;
 

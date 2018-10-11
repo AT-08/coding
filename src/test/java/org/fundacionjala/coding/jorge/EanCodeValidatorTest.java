@@ -8,26 +8,26 @@ import static org.junit.Assert.assertTrue;
 /**
  *
  */
-public class Exam1Test {
+public class EanCodeValidatorTest {
     /**
      *
      */
     @Test
     public void test1() {
-        assertTrue(Exam1.validate("9783815820865"));
+        assertTrue(EanCodeValidator.validate("9783815820865"));
     }
     /**
      *
      */
     @Test
     public void test2() {
-        assertFalse(Exam1.validate("9783815820864"));
+        assertFalse(EanCodeValidator.validate("9783815820864"));
     }
     /**
      *
      */
     @Test
     public void test3() {
-        assertTrue(Exam1.validate("9783827317100"));
+        assertTrue(EanCodeValidator.validate("9783827317100"));
     }
 }

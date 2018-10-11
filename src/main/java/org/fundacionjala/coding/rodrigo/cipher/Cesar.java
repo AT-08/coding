@@ -1,9 +1,9 @@
-package org.fundacionjala.coding.rodrigo;
+package org.fundacionjala.coding.rodrigo.cipher;
 
 /**
  * Cifrado Cesar.
  */
-public final class CesarCrypto implements Encryption {
+public final class Cesar implements Encryption {
     @Override
     public String encode(final String message, final String key) {
         char[] parts = message.trim().toUpperCase().replaceAll("[^a-zA-Z0]", "").toCharArray();

@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.rodrigo;
+package org.fundacionjala.coding.rodrigo.cipher;
 
 /**
  * Abstract class.
