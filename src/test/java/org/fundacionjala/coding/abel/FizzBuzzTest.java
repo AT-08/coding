@@ -68,7 +68,6 @@ public class FizzBuzzTest {
     }
 
 
-
     /**
      *
      */
@@ -87,22 +86,12 @@ public class FizzBuzzTest {
         assertEquals(BUZZ, instance.fizzBuzz2(num3));
     }
 
-    /**
-     *
-     */
-
-    @Test
-    public void test8() {
-        final int num3 = 53;
-        assertEquals(FIZZ_BUZZ, instance.fizzBuzz2(num3));
-    }
-
-    /**
+     /**
      *
      */
     @Test
     public void test9() {
-        final int num3 = 58;
+        final int num3 = 59;
         assertEquals(BUZZ, instance.fizzBuzz2(num3));
     }
 }

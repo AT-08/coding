@@ -64,21 +64,20 @@ public class FizzBuzz {
 
         String[] a = new String[LENGTH];
         int cont = 0;
-        final int num1 = 53;
-        final int num2 = 35;
-        final int num3 = 0;
+
 
         for (int i = 1; i <= LENGTH; i++) {
-            if (i == num1 || i == num2) {
-                a[cont] = FIZZBUZZ;
-            } else if (i % FIZZ_NUM == num3 || String.valueOf(i).contains("3")) {
+            if (i % FIZZ_NUM == 0 || String.valueOf(i).contains("3")) {
                 a[cont] = FIZZ;
-            } else if (i % FIZZ_NUM == num3 || String.valueOf(i).contains("5")) {
+            } else if (i % FIZZ_NUM == 0 || String.valueOf(i).contains("5")) {
                 a[cont] = BUZZ;
             } else {
                 a[cont] = String.valueOf(i);
             }
+            System.out.println(a[cont]);
             cont++;
+
+
         }
         return a;
     }
