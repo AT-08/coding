@@ -10,10 +10,7 @@ import static org.junit.Assert.assertEquals;
  *
  */
 public class FizzBuzzTest {
-
-
     private FizzBuzz instance;
-
     private static final String FIZZ = "Fizz";
     private static final String BUZZ = "Buzz";
     private static final String FIZZ_BUZZ = "FizzBuzz";
@@ -24,7 +21,6 @@ public class FizzBuzzTest {
     @Before
     public void before() {
         instance = new FizzBuzz();
-
     }
 
     /**
