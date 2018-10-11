@@ -25,6 +25,7 @@ public class Rental {
    * @param movie type Movie Object.
    */
   public void addMovie(final Movie movie) {
+    movie.setDaysRented(daysRented);
     this.movieList.add(movie);
   }
 

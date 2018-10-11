@@ -9,10 +9,9 @@ public class NewReleaseMovie extends Movie {
    * Construnctor.
    *
    * @param title type string.
-   * @param daysRented type integer.
    */
-  public NewReleaseMovie(final String title, final int daysRented) {
-    super(title, daysRented);
+  public NewReleaseMovie(final String title) {
+    super(title);
   }
 
   /**
@@ -32,10 +31,7 @@ public class NewReleaseMovie extends Movie {
    */
   @Override
   public int getRenterPoints() {
-    if (daysRented > 1) {
-      return RENTER_POINTS + 1;
-    }
-    return RENTER_POINTS;
+    return daysRented > 1 ? RENTER_POINTS + 1 : RENTER_POINTS;
   }
 
 }

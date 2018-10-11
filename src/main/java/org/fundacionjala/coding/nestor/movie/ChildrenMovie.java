@@ -11,25 +11,25 @@ public class ChildrenMovie extends Movie {
    *
    * @param title type string.
    */
-  public ChildrenMovie(final String title, final int daysRented) {
-    super(title, daysRented);
+  public ChildrenMovie(final String title) {
+    super(title);
   }
 
   /**
    * Method to get price for this kind of movies.
    *
-   * @param daysRented type integer.
    * @return Price.
    */
   @Override
   public double getPrice() {
-    if (daysRented > DAYS) {
-      return PRICE + (daysRented - DAYS) * FACTOR;
-    }
-
-    return PRICE;
+    return daysRented > DAYS ? PRICE + (daysRented - DAYS) * FACTOR : PRICE;
   }
 
+  /**
+   * Method to get renter points.
+   *
+   * @return renter points.
+   */
   @Override
   public int getRenterPoints() {
     return RENTER_POINTS;

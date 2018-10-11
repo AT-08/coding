@@ -10,10 +10,9 @@ public class RegularMovie extends Movie {
    * Constructor .
    *
    * @param title type string.
-   * @param daysRented type integer.
    */
-  public RegularMovie(final String title, final int daysRented) {
-    super(title, daysRented);
+  public RegularMovie(final String title) {
+    super(title);
   }
 
   /**
@@ -23,11 +22,7 @@ public class RegularMovie extends Movie {
    */
   @Override
   public double getPrice() {
-    if (daysRented > DAYS) {
-      return PRICE + (daysRented - DAYS) * FACTOR;
-    }
-
-    return PRICE;
+    return daysRented > DAYS ? PRICE + (daysRented - DAYS) * FACTOR : PRICE;
   }
 
   /**

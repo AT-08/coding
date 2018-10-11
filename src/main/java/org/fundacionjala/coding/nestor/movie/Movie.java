@@ -7,17 +7,24 @@ public abstract class Movie {
   protected static final double FACTOR = 1.5;
   protected static final int DAYS = 3;
   protected static final int RENTER_POINTS = 1;
-  String title;
-  int daysRented;
+  protected String title;
+  protected int daysRented;
 
   /**
    * Constructor.
    *
    * @param title type string.
-   * @param movieType type MovieType.
    */
-  public Movie(final String title, final int daysRented) {
+  public Movie(final String title) {
     this.title = title;
+  }
+
+  /**
+   * Set days rental.
+   *
+   * @param daysRented type integer.
+   */
+  public void setDaysRented(final int daysRented) {
     this.daysRented = daysRented;
   }
 
@@ -31,13 +38,17 @@ public abstract class Movie {
   }
 
   /**
-   * Abstract method. To implement get price depends on kind of movie.
+   * Abstract method to implement get price depends on kind of movie.
    *
-   * @param daysRented type integer.
    * @return price type double.
    */
   public abstract double getPrice();
 
+  /**
+   * Abstract method to implement get renter points.
+   *
+   * @return renter points.
+   */
   public abstract int getRenterPoints();
 
 }
