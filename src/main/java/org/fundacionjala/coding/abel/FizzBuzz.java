@@ -74,7 +74,6 @@ public class FizzBuzz {
             } else {
                 a[cont] = String.valueOf(i);
             }
-            System.out.println(a[cont]);
             cont++;
 
 
