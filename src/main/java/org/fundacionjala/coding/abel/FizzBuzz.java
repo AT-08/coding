@@ -1,6 +1,4 @@
 package org.fundacionjala.coding.abel;
-
-
 /**
  *
  */
@@ -21,7 +19,6 @@ public class FizzBuzz {
         String[] container = generated();
         return container[indicadio - 1];
     }
-
 
     /**
      * @return value og return
@@ -61,11 +58,8 @@ public class FizzBuzz {
      * @return value of return
      */
     public String[] generated2() {
-
         String[] a = new String[LENGTH];
         int cont = 0;
-
-
         for (int i = 1; i <= LENGTH; i++) {
             if (i % FIZZ_NUM == 0 || String.valueOf(i).contains("3")) {
                 a[cont] = FIZZ;
@@ -75,8 +69,6 @@ public class FizzBuzz {
                 a[cont] = String.valueOf(i);
             }
             cont++;
-
-
         }
         return a;
     }

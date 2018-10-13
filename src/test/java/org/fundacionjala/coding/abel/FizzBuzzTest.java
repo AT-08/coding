@@ -86,7 +86,7 @@ public class FizzBuzzTest {
         assertEquals(BUZZ, instance.fizzBuzz2(num3));
     }
 
-     /**
+    /**
      *
      */
     @Test
