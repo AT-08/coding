@@ -24,7 +24,6 @@ final class Main {
         customer.addRental(new Rental(new MovieChildren("UP"), 2));
         customer.addRental(new Rental(new MovieNewRelease("The favourite"), THREE));
         customer.statement();
-        System.out.println("Bolsa tama�o: ".concat(Integer.toString(customer.capacityRentalElements())));
         System.out.println("Elementos en bolsa: ".concat(Integer.toString(customer.numRentalElements())));
     }
 }

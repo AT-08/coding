@@ -1,14 +1,13 @@
 package org.fundacionjala.coding.dennis;
 
-import java.util.Enumeration;
-import java.util.Vector;
+import java.util.ArrayList;
 
 /**
  *
  */
 public class Customer {
     private String name;
-    private Vector rentals = new Vector(1, 1);
+    private ArrayList<Rental> rentals = new ArrayList(1);
 
     /**
      *
@@ -23,7 +22,7 @@ public class Customer {
      * @param arg add rental.
      */
     public void addRental(final Rental arg) {
-        rentals.addElement(arg);
+        rentals.add(arg);
     }
 
     /**
@@ -32,14 +31,6 @@ public class Customer {
      */
     public int numRentalElements() {
         return rentals.size();
-    }
-
-    /**
-     *
-     * @return how big is the bag.
-     */
-    public int capacityRentalElements() {
-        return rentals.capacity();
     }
 
     /**
@@ -58,13 +49,11 @@ public class Customer {
         float thisPrice;
         int frequentRenterPoints = 0;
         int thisFrequentRenterPoints;
-        Enumeration rentals = this.rentals.elements();
         System.out.println(customerName());
-        while (rentals.hasMoreElements()) {
-            Rental each = (Rental) rentals.nextElement();
-            thisPrice = each.calculatePriceMovie();
-            System.out.println(movieAndPrice(each, thisPrice));
-            thisFrequentRenterPoints = each.calculateFrequentRenterPoints();
+        for (Rental eachRental : rentals) {
+            thisPrice = eachRental.calculatePriceMovie();
+            System.out.println(movieAndPrice(eachRental, thisPrice));
+            thisFrequentRenterPoints = eachRental.calculateFrequentRenterPoints();
             frequentRenterPoints = frequentRenterPoints + thisFrequentRenterPoints;
             totalAmount += thisPrice;
         }

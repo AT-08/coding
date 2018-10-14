@@ -1,13 +1,5 @@
-package org.fundacionjala.coding;
+package org.fundacionjala.coding.dennis;
 
-
-import org.fundacionjala.coding.dennis.MovieChildren;
-import org.fundacionjala.coding.dennis.Movie;
-import org.fundacionjala.coding.dennis.MovieNewRelease;
-import org.fundacionjala.coding.dennis.PriceCode;
-import org.fundacionjala.coding.dennis.Rental;
-import org.fundacionjala.coding.dennis.Customer;
-import org.fundacionjala.coding.dennis.MovieRegular;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

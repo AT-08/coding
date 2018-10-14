@@ -17,22 +17,6 @@ public abstract class Movie {
 
     /**
      *
-     * @return price.
-     */
-    public PriceCode getPriceCode() {
-        return getpriceCode();
-    }
-
-    /**
-     *
-     * @param arg price.
-     */
-    public void setPriceCode(final PriceCode arg) {
-        setpriceCode(arg);
-    }
-
-    /**
-     *
      * @return title.
      */
     public String getTitle() {
@@ -43,7 +27,7 @@ public abstract class Movie {
      *
      * @return price.
      */
-    public PriceCode getpriceCode() {
+    public PriceCode getPriceCode() {
         return priceCode;
     }
 
