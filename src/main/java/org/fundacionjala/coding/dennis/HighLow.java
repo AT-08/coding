@@ -3,6 +3,7 @@ package org.fundacionjala.coding.dennis;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 
 /**
  *
@@ -22,7 +23,7 @@ public final class HighLow {
      * @return cadena de 2 elementos.
      */
     public static String hal(final String numbers) {
-        ArrayList<Integer> digitArray = new ArrayList<>();
+        List<Integer> digitArray = new ArrayList<>();
         for (String dString : numbers.split(" ")) {
             digitArray.add(Integer.parseInt(dString));
         }

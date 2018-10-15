@@ -4,15 +4,7 @@ package org.fundacionjala.coding.abel;
  *
  */
 public class StopGninnipsMySdrow {
-    /**
-     *
-     */
     private static final int MIN = 5;
-
-    /**
-     *
-     */
-
 
     /**
      * @param sentence string of input

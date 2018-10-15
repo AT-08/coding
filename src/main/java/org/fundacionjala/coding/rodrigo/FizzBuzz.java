@@ -8,13 +8,13 @@ import java.util.stream.IntStream;
  * of the number and for the multiples of five print Buzz. For numbers which are multiples of both three
  * and five print FizzBuzz.
  */
-public final class KataFizzBuzz {
+public final class FizzBuzz {
     /**
      * @param number quantity of print numbers
      * @return The whole String
      */
     public String fizzBuzz(final int number) {
-        return IntStream.rangeClosed(1, number).mapToObj(KataFizzBuzz::changeFB)
+        return IntStream.rangeClosed(1, number).mapToObj(FizzBuzz::changeFB)
                 .collect(Collectors.joining("\n"));
     }
 

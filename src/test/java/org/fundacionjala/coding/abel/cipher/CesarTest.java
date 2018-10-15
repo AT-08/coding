@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.abel;
+package org.fundacionjala.coding.abel.cipher;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -8,9 +8,9 @@ import static org.junit.Assert.assertEquals;
 /**
  *
  */
-public class CodeCesarTest {
+public class CesarTest {
 
-    private CodeCesar instance;
+    private Cesar instance;
 
 
     private static final String EXPECTED_GLOBAL = "ETWWT T";
@@ -21,7 +21,7 @@ public class CodeCesarTest {
      */
     @Before
     public void before() {
-        instance = new CodeCesar();
+        instance = new Cesar();
     }
 
 

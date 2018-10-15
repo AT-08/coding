@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * To test class Kata.
  */
-public class KataTest {
+public class SortTwisted37Test {
   /**
    * Method basic test.
    */
@@ -21,8 +21,8 @@ public class KataTest {
     final Integer[] actualValue2 = new Integer[] {12, 13, 14};
     final Integer[] actualValue3 = new Integer[] {9, 2, 4, 7, 3};
 
-    assertEquals(Arrays.toString(expectedResult1), Arrays.toString(Kata.sortTwisted37(actualValue1)));
-    assertEquals(Arrays.toString(expectedResult2), Arrays.toString(Kata.sortTwisted37(actualValue2)));
-    assertEquals(Arrays.toString(expectedResult3), Arrays.toString(Kata.sortTwisted37(actualValue3)));
+    assertEquals(Arrays.toString(expectedResult1), Arrays.toString(SortTwisted37.sortTwisted37(actualValue1)));
+    assertEquals(Arrays.toString(expectedResult2), Arrays.toString(SortTwisted37.sortTwisted37(actualValue2)));
+    assertEquals(Arrays.toString(expectedResult3), Arrays.toString(SortTwisted37.sortTwisted37(actualValue3)));
   }
 }

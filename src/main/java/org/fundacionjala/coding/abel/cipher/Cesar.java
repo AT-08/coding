@@ -1,9 +1,9 @@
-package org.fundacionjala.coding.abel;
+package org.fundacionjala.coding.abel.cipher;
 
 /**
  *
  */
-public class CodeCesar extends Encryptor {
+public class Cesar extends Cipher {
 
     /**
      * @param string         string of input

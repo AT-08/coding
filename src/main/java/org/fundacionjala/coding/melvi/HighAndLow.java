@@ -20,11 +20,11 @@ import java.util.Arrays;
  * Output string must be two numbers separated by a single
  * space, and highest number is first.
  */
-public final class Kata {
+public final class HighAndLow {
     /**
      *
      */
-    private Kata() {
+    private HighAndLow() {
     }
 
     /**

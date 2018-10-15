@@ -20,12 +20,11 @@ public final class CC {
      * @return the num of characters in the string
      */
     public static int charCount(final String str, char c) {
-
-        char cUpCase = Character.toUpperCase(c);
         char cLowCase = Character.toLowerCase(c);
+        final String wordToLowerCase = str.toLowerCase();
         int accountant = 0;
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == cLowCase || str.charAt(i) == cUpCase) {
+        for (int i = 0; i < wordToLowerCase.length(); i++) {
+            if (wordToLowerCase.charAt(i) == cLowCase) {
                 accountant++;
             }
         }

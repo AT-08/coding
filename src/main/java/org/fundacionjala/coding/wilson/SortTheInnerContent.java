@@ -6,13 +6,11 @@ import java.util.Collections;
 /**
  *
  */
-public final class ChangeOrder {
+public final class SortTheInnerContent {
     /**
      *
      */
-
-    private ChangeOrder() {
-
+    private SortTheInnerContent() {
     }
 
     /**

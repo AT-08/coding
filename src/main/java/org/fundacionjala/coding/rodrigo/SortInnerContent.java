@@ -8,11 +8,11 @@ import java.util.stream.Collectors;
 /**
  * Kata about Sort the inner content of a sentence.
  */
-final class Kata {
+final class SortInnerContent {
     /**
      * Empty constructor.
      */
-    private Kata() {
+    private SortInnerContent() {
     }
 
     /**

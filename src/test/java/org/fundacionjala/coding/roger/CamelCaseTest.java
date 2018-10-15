@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
  *
  */
 
-public class SolutionTest {
+public class CamelCaseTest {
 
     /**
      * Unit Test testTwoWords.
@@ -17,7 +17,7 @@ public class SolutionTest {
 
     @Test
     public void testTwoWords() {
-        assertEquals("OneTwo", Solution.camelCase("one two"));
+        assertEquals("OneTwo", CamelCase.camelCase("one two"));
     }
 
     /**
@@ -27,7 +27,7 @@ public class SolutionTest {
 
     @Test
     public void testThreeWords() {
-        assertEquals("CamelCaseMethod", Solution.camelCase("camel case method"));
+        assertEquals("CamelCaseMethod", CamelCase.camelCase("camel case method"));
     }
 
     /**
@@ -37,7 +37,7 @@ public class SolutionTest {
 
     @Test
     public void testLeadingSpace() {
-        assertEquals("CamelCaseWord", Solution.camelCase(" camel case word"));
+        assertEquals("CamelCaseWord", CamelCase.camelCase(" camel case word"));
     }
 
     /**
@@ -47,7 +47,7 @@ public class SolutionTest {
 
     @Test
     public void testTrailingSpace() {
-        assertEquals("HiStudents", Solution.camelCase("hi students "));
+        assertEquals("HiStudents", CamelCase.camelCase("hi students "));
     }
 
     /**
@@ -57,8 +57,8 @@ public class SolutionTest {
 
     @Test
     public void testSingleLetter() {
-        assertEquals("Z", Solution.camelCase("z"));
-        assertEquals("A", Solution.camelCase("a"));
+        assertEquals("Z", CamelCase.camelCase("z"));
+        assertEquals("A", CamelCase.camelCase("a"));
     }
 
     /**
@@ -68,7 +68,7 @@ public class SolutionTest {
 
     @Test
     public void testTwoSpacesBetweenWords() {
-        assertEquals("AbC", Solution.camelCase("ab  c"));
+        assertEquals("AbC", CamelCase.camelCase("ab  c"));
     }
 
     /**
@@ -78,7 +78,7 @@ public class SolutionTest {
 
     @Test
     public void testThreeSpacesBetweenWords() {
-        assertEquals("ThreeTwo", Solution.camelCase("three   Two"));
+        assertEquals("ThreeTwo", CamelCase.camelCase("three   Two"));
     }
 
     /**
@@ -88,7 +88,7 @@ public class SolutionTest {
 
     @Test
     public void testEmptyString() {
-        assertEquals("", Solution.camelCase(""));
+        assertEquals("", CamelCase.camelCase(""));
     }
 
     /**
@@ -98,7 +98,7 @@ public class SolutionTest {
 
     @Test
     public void testSpaceInAll() {
-        assertEquals("OneTwoThreeFor", Solution.camelCase(" one  two three for "));
+        assertEquals("OneTwoThreeFor", CamelCase.camelCase(" one  two three for "));
     }
 
     /**
@@ -108,7 +108,7 @@ public class SolutionTest {
 
     @Test
     public void testUpperCase() {
-        assertEquals("OneTwoThreeFor", Solution.camelCase(" one  Two three For "));
+        assertEquals("OneTwoThreeFor", CamelCase.camelCase(" one  Two three For "));
     }
 
 }

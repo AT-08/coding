@@ -18,7 +18,7 @@ public class EanValidation {
     int counter = 0;
     int total = 0;
     while (counter < eanCode.length()) {
-      total += counter % TWO == 0 ? number % TEN * THREE : number % TEN * 1;
+      total += counter % TWO == 0 ? number % TEN * THREE : number % TEN;
       number /= TEN;
       counter++;
     }

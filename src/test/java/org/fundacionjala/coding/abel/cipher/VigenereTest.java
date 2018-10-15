@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.abel;
+package org.fundacionjala.coding.abel.cipher;
 
 import org.junit.Before;
 import org.junit.Test;

@@ -1,9 +1,9 @@
-package org.fundacionjala.coding.abel;
+package org.fundacionjala.coding.abel.cipher;
 
 /**
  *
  */
-public abstract class Encryptor {
+public abstract class Cipher {
     /**
      *
      */

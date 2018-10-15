@@ -19,9 +19,9 @@ public final class CamelCase {
         StringBuilder sb = new StringBuilder();
         String[] parts = str.split(" ");
         if (str.length() != 0) {
-            for (int i = 0; i < parts.length; i++) {
-                sb.append(!parts[i].isEmpty() ? parts[i]
-                        .replaceFirst(parts[i].substring(0, 1), parts[i]
+            for (String part : parts) {
+                sb.append(!part.isEmpty() ? part
+                        .replaceFirst(part.substring(0, 1), part
                                 .toUpperCase()
                                 .substring(0, 1)) : "");
             }

@@ -16,9 +16,8 @@ public class EANValidation {
     public boolean validate(final String eanCode) {
         String[] auxiliar = eanCode.split("");
         int sum = 0;
-        int num = 0;
         for (int i = 0; i <= auxiliar.length - DOS; i++) {
-            num = Integer.parseInt(auxiliar[i]);
+            int num = Integer.parseInt(auxiliar[i]);
             sum += i % DOS == 0 ? num : num * TRES;
         }
         sum = sum % DIEZ == 0 ? 0 : DIEZ - (sum % DIEZ);

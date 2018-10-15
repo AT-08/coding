@@ -20,6 +20,7 @@ public class EANValidator {
         for (int i = 0; i < eanCode.length() - 1; i++) {
             sum += i % TWO == 0 ? Integer.parseInt(letter[i]) : Integer.parseInt(letter[i]) * THREE;
         }
-        return Integer.parseInt(letter[eanCode.length() - 1]) == (sum % TEN == 0 ?  0 : TEN - (sum % TEN));
+        final int checkSum = sum % TEN == 0 ? 0 : TEN - (sum % TEN);
+        return Integer.parseInt(letter[eanCode.length() - 1]) == checkSum;
     }
 }

@@ -8,15 +8,15 @@ import static org.junit.Assert.assertEquals;
 /**
  * Test of FizzBuzz.
  */
-public class KataFizzBuzzTest {
-    private KataFizzBuzz kataFizzBuzz;
+public class FizzBuzzTest {
+    private FizzBuzz fizzBuzz;
 
     /**
      * Setting the class.
      */
     @Before
     public void setUp() {
-        kataFizzBuzz = new KataFizzBuzz();
+        fizzBuzz = new FizzBuzz();
     }
 
     /**
@@ -25,7 +25,7 @@ public class KataFizzBuzzTest {
     @Test
     public void fizzBuzzTest() {
         final int num = 5;
-        assertEquals("1\n2\nFizz\n4\nBuzz", kataFizzBuzz.fizzBuzz(num));
+        assertEquals("1\n2\nFizz\n4\nBuzz", fizzBuzz.fizzBuzz(num));
     }
 
     /**
@@ -34,7 +34,7 @@ public class KataFizzBuzzTest {
     @Test
     public void convertNumberTestFizzBuzz() {
         final int num = 15;
-        assertEquals("FizzBuzz", KataFizzBuzz.changeFB(num));
+        assertEquals("FizzBuzz", FizzBuzz.changeFB(num));
     }
 
     /**
@@ -43,7 +43,7 @@ public class KataFizzBuzzTest {
     @Test
     public void convertNumberTestFizz() {
         final int num = 3;
-        assertEquals("Fizz", KataFizzBuzz.changeFB(num));
+        assertEquals("Fizz", FizzBuzz.changeFB(num));
     }
 
     /**
@@ -52,7 +52,7 @@ public class KataFizzBuzzTest {
     @Test
     public void convertNumberTestBuzz() {
         final int num = 5;
-        assertEquals("Buzz", KataFizzBuzz.changeFB(num));
+        assertEquals("Buzz", FizzBuzz.changeFB(num));
     }
 
     /**
@@ -63,9 +63,9 @@ public class KataFizzBuzzTest {
         final int num1 = 1;
         final int num2 = 13;
         final int num3 = 29;
-        assertEquals("1", KataFizzBuzz.changeFB(num1));
-        assertEquals("Fizz", KataFizzBuzz.changeFB(num2));
-        assertEquals("29", KataFizzBuzz.changeFB(num3));
+        assertEquals("1", FizzBuzz.changeFB(num1));
+        assertEquals("Fizz", FizzBuzz.changeFB(num2));
+        assertEquals("29", FizzBuzz.changeFB(num3));
     }
 
     /**
@@ -75,7 +75,7 @@ public class KataFizzBuzzTest {
     public void secondPart() {
         final int num13 = 13;
         assertEquals("1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\nFizz",
-                kataFizzBuzz.fizzBuzz(num13));
+                fizzBuzz.fizzBuzz(num13));
     }
 
     /**
@@ -84,7 +84,7 @@ public class KataFizzBuzzTest {
     @Test
     public void singleNumberScnd() {
         final int num50 = 52;
-        assertEquals("Buzz", KataFizzBuzz.changeFB(num50));
+        assertEquals("Buzz", FizzBuzz.changeFB(num50));
     }
 }
 

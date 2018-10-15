@@ -15,8 +15,8 @@ public class HighestAndLowest {
         String[] container = numbers.split(" ");
         int mini = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
-        for (int i = 0; i < container.length; i++) {
-            int num = Integer.parseInt(container[i]);
+        for (String aContainer : container) {
+            int num = Integer.parseInt(aContainer);
             if (num < mini) {
                 mini = num;
             }

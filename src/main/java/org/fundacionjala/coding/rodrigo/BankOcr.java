@@ -3,7 +3,7 @@ package org.fundacionjala.coding.rodrigo;
 /**
  * KataBankOCR.
  */
-public final class OcrBank {
+public final class BankOcr {
     static final String[] DIGITS = {
             " _ | ||_|",    //zero
             "     |  |",    //one
@@ -19,7 +19,7 @@ public final class OcrBank {
     /**
      * Empty Constructor.
      */
-    private OcrBank() {
+    private BankOcr() {
     }
 
     /**
@@ -49,7 +49,7 @@ public final class OcrBank {
         if (account.contains("?")) {
             return account.concat(" ILL");
         }
-        if (!checkSum(account)) {
+        if (!isValidCheckSum(account)) {
             return account.concat(" ERR");
         }
         return account;
@@ -74,7 +74,7 @@ public final class OcrBank {
      * @param account Input acc.
      * @return the checksum.
      */
-    public static boolean checkSum(final String account) {
+    public static boolean isValidCheckSum(final String account) {
         final int checknum = 11;
         String[] parts = account.split("");
         int checksum = 0;

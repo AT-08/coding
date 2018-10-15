@@ -6,11 +6,11 @@ import java.util.Comparator;
 /**
  * Class to resolve Sorting on the planet twisted 3 7.
  */
-public final class Kata {
+public final class SortTwisted37 {
   /**
    * For utility class.
    */
-  private Kata() { }
+  private SortTwisted37() { }
   /**
    * Method to resolve sorting.
    * @param array type Integer.
@@ -18,9 +18,9 @@ public final class Kata {
    */
   public static Integer[] sortTwisted37(final Integer[] array) {
     return Arrays.stream(array)
-        .map(Kata::twistedNumber)
+        .map(SortTwisted37::twistedNumber)
         .sorted(Comparator.naturalOrder())
-        .map(Kata::twistedNumber)
+        .map(SortTwisted37::twistedNumber)
         .toArray(Integer[]::new);
   }
 

@@ -1,10 +1,9 @@
-package org.fundacionjala.coding.abel;
+package org.fundacionjala.coding.abel.cipher;
 
 /**
  *
  */
-
-public class Vigenere extends Encryptor {
+public class Vigenere extends Cipher {
 
     private static final int UNO_1 = 1;
 

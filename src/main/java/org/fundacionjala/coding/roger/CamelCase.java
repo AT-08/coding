@@ -5,14 +5,14 @@ package org.fundacionjala.coding.roger;
  * capitalized without spaces.
  */
 
-public final class Solution {
+public final class CamelCase {
 
 
     /**
      * Empty constructor.
      */
 
-    private Solution() {
+    private CamelCase() {
     }
 
     /**

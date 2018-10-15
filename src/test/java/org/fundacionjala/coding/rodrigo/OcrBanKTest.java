@@ -20,7 +20,7 @@ public class OcrBanKTest {
         String s1 = " _    \n"
                 .concat("  ||_|\n")
                 .concat("  |  |");
-        assertEquals("74", OcrBank.convertOcrToNumber(s1));
+        assertEquals("74", BankOcr.convertOcrToNumber(s1));
     }
 
     /**
@@ -31,8 +31,8 @@ public class OcrBanKTest {
         String s2 = "    _  _     _  _  _  _  _ \n"
                 .concat("  | _| _||_||_ |_   ||_||_|\n")
                 .concat("  ||_  _|  | _||_|  ||_| _|");
-        assertEquals("123456789", OcrBank.convertOcrToNumber(s2));
-        assertEquals("123456789", OcrBank.verificationIllErr(OcrBank.convertOcrToNumber(s2)));
+        assertEquals("123456789", BankOcr.convertOcrToNumber(s2));
+        assertEquals("123456789", BankOcr.verificationIllErr(BankOcr.convertOcrToNumber(s2)));
     }
 
     /**
@@ -43,8 +43,8 @@ public class OcrBanKTest {
         String s3 = " _  _  _  _  _  _  _  _    \n"
                 .concat("| || || || || || || ||_   |\n")
                 .concat("|_||_||_||_||_||_||_| _|  |");
-        assertEquals(NUMBER, OcrBank.convertOcrToNumber(s3));
-        assertEquals(NUMBER, OcrBank.verificationIllErr(OcrBank.convertOcrToNumber(s3)));
+        assertEquals(NUMBER, BankOcr.convertOcrToNumber(s3));
+        assertEquals(NUMBER, BankOcr.verificationIllErr(BankOcr.convertOcrToNumber(s3)));
     }
 
     /**
@@ -55,8 +55,8 @@ public class OcrBanKTest {
         String s4 = "    _  _     _  _  _  _  _ \n"
                 .concat("  | _| _||_| _ |_   ||_||_|\n")
                 .concat("  ||_  _|  | _||_|  ||_| _ ");
-        assertEquals("1234?678?", OcrBank.convertOcrToNumber(s4));
-        assertEquals("1234?678? ILL", OcrBank.verificationIllErr(OcrBank.convertOcrToNumber(s4)));
+        assertEquals("1234?678?", BankOcr.convertOcrToNumber(s4));
+        assertEquals("1234?678? ILL", BankOcr.verificationIllErr(BankOcr.convertOcrToNumber(s4)));
     }
 
     /**
@@ -67,7 +67,7 @@ public class OcrBanKTest {
         String s5 = "    _  _  _  _  _  _     _ \n"
                 .concat("|_||_|| || ||_   |  |  | _ \n")
                 .concat("  | _||_||_||_|  |  |  | _|");
-        assertEquals("49006771? ILL", OcrBank.verificationIllErr(OcrBank.convertOcrToNumber(s5)));
+        assertEquals("49006771? ILL", BankOcr.verificationIllErr(BankOcr.convertOcrToNumber(s5)));
     }
 
     /**
@@ -78,7 +78,7 @@ public class OcrBanKTest {
         String s5 = "    _  _  _  _  _  _     _ \n"
                 .concat("|_||_|| || ||_   |  |  | _|\n")
                 .concat("  | _||_||_||_|  |  |  | _|");
-        assertEquals("490067713 ERR", OcrBank.verificationIllErr(OcrBank.convertOcrToNumber(s5)));
+        assertEquals("490067713 ERR", BankOcr.verificationIllErr(BankOcr.convertOcrToNumber(s5)));
     }
 
     /**
@@ -86,7 +86,7 @@ public class OcrBanKTest {
      */
     @Test
     public void checkSumTest() {
-        assertTrue(OcrBank.checkSum(NUMBER));
+        assertTrue(BankOcr.isValidCheckSum(NUMBER));
     }
 
     /**
@@ -94,6 +94,6 @@ public class OcrBanKTest {
      */
     @Test
     public void checkSumTestFalse() {
-        assertFalse(OcrBank.checkSum("100000051"));
+        assertFalse(BankOcr.isValidCheckSum("100000051"));
     }
 }
