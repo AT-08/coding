@@ -1,24 +1,26 @@
 package org.fundacionjala.coding.abel;
 
 
-public class Customer {
-    private String name;
-    private Rental rental;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Customer(final String name) {
+public final class Customer {
+    private String name;
+    private List<Movie> movies = new ArrayList<>();
+
+    Customer(final String name) {
         this.name = name;
     }
 
-    public String getCustomerName() {
-        return this.name;
+    void addMovie(final Movie movie) {
+        movies.add(movie);
     }
 
-    public void createRental(int daysRented) {
-        rental = new Rental(daysRented);
+    String getName() {
+        return name;
     }
 
-
-    public void addMovie(final Movie movie) {
-        rental.addMovie(movie);
+    List<Movie> getMovies() {
+        return movies;
     }
 }

@@ -1,41 +1,51 @@
 package org.fundacionjala.coding.abel;
 
-import java.util.ArrayList;
-import java.util.List;
+public final class Rental {
+    private Customer customer;
+    private String bill;
+    private double totalAmount;
+    private int totalFRP;
 
-public class Rental {
-
-    private List<Movie> movieList = new ArrayList<>();
-
-    private int daysRented;
-
-    public Rental(final int daysRented) {
-        this.daysRented = daysRented;
+    Rental(final Customer customer) {
+        this.customer = customer;
+        totalAmount = 0;
+        totalFRP = 0;
+        calculateFrequentRenterPoints();
+        calculateAmount();
+        makeBill();
     }
 
-    public void addMovie(final Movie movie) {
-        movie.setDaysRented(daysRented);
-        this.movieList.add(movie);
-    }
-
-    public double calculateCharge() {
-        double charge = 0;
-
-        for (Movie item : this.movieList) {
-            charge += item.getPrice();
+    private void calculateAmount() {
+        for (Movie movie : customer.getMovies()) {
+            totalAmount += movie.getCharge();
         }
-
-        return charge;
     }
 
-    public int calculateRenterPoints() {
-        int renterPoints = 0;
-
-        for (Movie item : this.movieList) {
-            renterPoints += item.getRenterPoints();
+    double getTotalAmount() {
+        return totalAmount;
+    }
+  private void calculateFrequentRenterPoints() {
+        for (Movie movie : customer.getMovies()) {
+            totalFRP += movie.getFrequentRenterPoints();
         }
-
-        return renterPoints;
     }
 
+    private void makeBill() {
+        StringBuilder builder = new StringBuilder(String.format("Rental Record for: %s %n", customer.getName()));
+        for (Movie movie : customer.getMovies()) {
+            builder.append(String.format("\t%s\t", movie.getTitle()));
+            builder.append(String.format("%s %n", String.valueOf(movie.getCharge())));
+        }
+        builder.append(String.format("Amount owed is %s %n", String.valueOf(getTotalAmount())));
+        builder.append(String.format("You earned %s frequent renter points %n", String.valueOf(getTotalFRP())));
+        this.bill = builder.toString();
+    }
+
+    public String getBill() {
+        return bill;
+    }
+
+    int getTotalFRP() {
+        return totalFRP;
+    }
 }

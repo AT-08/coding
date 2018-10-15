@@ -1,20 +1,31 @@
 package org.fundacionjala.coding.abel;
 
+
 public class NewRelease extends Movie {
+    private EnumMovie movieType = EnumMovie.NEW_RELEASE;
+    private int frequentRenterPoints;
 
 
-    public NewRelease(String title) {
-        super(title);
+    NewRelease(final String title, final int daysRented) {
+        super(title, daysRented);
+        frequentRenterPoints = 1;
     }
 
     @Override
-    public double getPrice() {
-        return (double) (daysRented * DAYS);
+    void calculateCharge() {
+        final int factor = 3;
+        charge += getDaysRented() * factor;
+    }
+
+    public EnumMovie getMovieType() {
+        return movieType;
     }
 
     @Override
-    public int getRenterPoints() {
-        return daysRented > 1 ? RENTER_POINTS + 1 : RENTER_POINTS;
+    public int getFrequentRenterPoints() {
+        if (getDaysRented() > 1) {
+            frequentRenterPoints++;
+        }
+        return frequentRenterPoints;
     }
-
 }

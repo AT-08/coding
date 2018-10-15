@@ -1,27 +1,29 @@
 package org.fundacionjala.coding.abel;
 
-
 public abstract class Movie {
+    private String title;
+    private int daysRented;
+    protected double charge;
 
-    protected static final double FACTOR = 1.5;
-    protected static final int DAYS = 3;
-    protected static final int RENTER_POINTS = 1;
-    protected String title;
-    protected int daysRented;
 
-    public Movie(final String title) {
+    Movie(final String title, final int daysRented) {
         this.title = title;
-    }
-    public void setDaysRented(final int daysRented) {
         this.daysRented = daysRented;
+        calculateCharge();
     }
-
+    abstract void calculateCharge();
     public String getTitle() {
         return title;
     }
 
-    public abstract double getPrice();
+    public abstract EnumMovie getMovieType();
 
-    public abstract int getRenterPoints();
+    public int getDaysRented() {
+        return daysRented;
+    }
 
+    public double getCharge() {
+        return charge;
+    }
+    public abstract int getFrequentRenterPoints();
 }
