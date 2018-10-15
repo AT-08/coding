@@ -42,7 +42,8 @@ public class Customer {
     }
 
     /**
-     * Calculus of data.
+     *
+     * @return Informacion de la renta.
      */
     public String statement() {
         float totalAmount = 0.0f;
@@ -55,7 +56,7 @@ public class Customer {
             frequentRenterPoints = frequentRenterPoints + thisFrequentRenterPoints;
             totalAmount += thisPrice;
         }
-        return customerName().concat(" Amount owed: ").concat(String.valueOf(totalAmount).concat(" .Frequent renter points: ")
+        return customerName().concat(" Price: ").concat(String.valueOf(totalAmount).concat(". FR points: ")
                         .concat(String.valueOf(frequentRenterPoints)));
     }
 

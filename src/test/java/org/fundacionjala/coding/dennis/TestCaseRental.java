@@ -23,7 +23,7 @@ public class TestCaseRental {
         customer.addRental(new Rental(new MovieRegular("Frost Vs Nixon"), 2));
         customer.addRental(new Rental(new MovieChildren("UP"), 2));
         customer.addRental(new Rental(new MovieNewRelease("The favourite"), DAYSRENTED));
-        assertEquals("Dennis Amount owed: 18.5 .Frequent renter points: 6", customer.statement());
+        assertEquals("Dennis Price: 18.5. FR points: 6", customer.statement());
     }
 
     /**
