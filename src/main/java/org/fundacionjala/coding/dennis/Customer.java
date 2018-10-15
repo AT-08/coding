@@ -7,13 +7,14 @@ import java.util.ArrayList;
  */
 public class Customer {
     private String name;
-    private ArrayList<Rental> rentals = new ArrayList(1);
+    private ArrayList<Rental> rentals;
 
     /**
      *
      * @param name asigned.
      */
     public Customer(final String name) {
+        rentals = new ArrayList<>(1);
         this.name = name;
     }
 
@@ -56,10 +57,8 @@ public class Customer {
      */
     public int frequentPoints() {
         int frequentRenterPoints = 0;
-        int thisFrequentRenterPoints;
         for (Rental rented : rentals) {
-            thisFrequentRenterPoints = rented.calculateFrequentRenterPoints();
-            frequentRenterPoints += thisFrequentRenterPoints;
+            frequentRenterPoints += rented.calculateFrequentRenterPoints();
         }
         return frequentRenterPoints;
     }
@@ -71,10 +70,8 @@ public class Customer {
      */
     public float amount() {
         float totalAmount = 0.0f;
-        float thisPrice;
         for (Rental rented : rentals) {
-            thisPrice = rented.calculatePriceMovie();
-            totalAmount += thisPrice;
+            totalAmount += rented.calculatePriceMovie();
         }
         return totalAmount;
     }
