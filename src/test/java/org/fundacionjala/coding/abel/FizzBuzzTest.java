@@ -28,7 +28,7 @@ public class FizzBuzzTest {
     @Test
     public void test() {
         final int num = 3;
-        assertEquals(FIZZ, instance.fizzBuzz(num));
+        assertEquals(FIZZ, instance.fizzBuzz2(num));
     }
 
     /**
@@ -37,7 +37,7 @@ public class FizzBuzzTest {
     @Test
     public void test2() {
         final int num2 = 5;
-        assertEquals(BUZZ, instance.fizzBuzz(num2));
+        assertEquals(BUZZ, instance.fizzBuzz2(num2));
     }
 
     /**
@@ -46,7 +46,7 @@ public class FizzBuzzTest {
     @Test
     public void test3() {
         final int num3 = 15;
-        assertEquals(FIZZ_BUZZ, instance.fizzBuzz(num3));
+        assertEquals(FIZZ_BUZZ, instance.fizzBuzz2(num3));
     }
 
     /**
@@ -55,7 +55,7 @@ public class FizzBuzzTest {
     @Test
     public void test4() {
         final int num3 = 60;
-        assertEquals(FIZZ_BUZZ, instance.fizzBuzz(num3));
+        assertEquals(FIZZ_BUZZ, instance.fizzBuzz2(num3));
     }
 
     /**
