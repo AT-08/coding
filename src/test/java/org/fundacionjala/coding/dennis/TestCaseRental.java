@@ -226,7 +226,7 @@ public class TestCaseRental {
      *
      */
     @Test
-    public void testAmount() {
+    public void testAmountOwnedPass() {
         Customer customer = new Customer("Eduardo");
         customer.addRental(new Rental(new MovieNewRelease("Dogman"), 2));
         customer.addRental(new Rental(new MovieRegular("Paprika"), 2));
