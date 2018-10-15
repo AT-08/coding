@@ -12,6 +12,8 @@ public class TestCaseRental {
     public static final double LIMIT = 0.01;
     public static final int DAYSRENTED = 3;
     public static final int DAYSRENTED4 = 4;
+    public static final int FPOINTS = 6;
+    public static final float TESTAMOUNT = 26.0f;
 
     /**
      *
@@ -205,5 +207,31 @@ public class TestCaseRental {
         Rental rent = new Rental(new MovieNewRelease("Incredibles 2"), DAYSRENTED);
         String expected = "Incredibles 2";
         assertEquals(expected, rent.getMovie().getTitle());
+    }
+
+    /**
+     *
+     */
+    @Test
+    public void testFrequentPoints() {
+        Customer customer = new Customer("Ramon");
+        customer.addRental(new Rental(new MovieNewRelease("Everybody knows"), 2));
+        customer.addRental(new Rental(new MovieRegular("Black Swan"), 2));
+        customer.addRental(new Rental(new MovieChildren("How to train your dragon"), 2));
+        customer.addRental(new Rental(new MovieNewRelease("Roma"), DAYSRENTED));
+        assertEquals(FPOINTS, customer.frequentPoints());
+    }
+
+    /**
+     *
+     */
+    @Test
+    public void testAmount() {
+        Customer customer = new Customer("Eduardo");
+        customer.addRental(new Rental(new MovieNewRelease("Dogman"), 2));
+        customer.addRental(new Rental(new MovieRegular("Paprika"), 2));
+        customer.addRental(new Rental(new MovieNewRelease("Cold War"), DAYSRENTED));
+        customer.addRental(new Rental(new MovieNewRelease("Burning"), DAYSRENTED));
+        assertEquals(TESTAMOUNT, customer.amount(), LIMIT);
     }
 }

@@ -46,18 +46,37 @@ public class Customer {
      * @return Informacion de la renta.
      */
     public String statement() {
-        float totalAmount = 0.0f;
-        float thisPrice;
+        return customerName().concat(" Price: ").concat(String.valueOf(amount()).concat(". FR points: ")
+                        .concat(String.valueOf(frequentPoints())));
+    }
+
+    /**
+     *
+     * @return Frequent rented points bonus.
+     */
+    public int frequentPoints() {
         int frequentRenterPoints = 0;
         int thisFrequentRenterPoints;
-        for (Rental eachRental : rentals) {
-            thisPrice = eachRental.calculatePriceMovie();
-            thisFrequentRenterPoints = eachRental.calculateFrequentRenterPoints();
-            frequentRenterPoints = frequentRenterPoints + thisFrequentRenterPoints;
+        for (Rental rented : rentals) {
+            thisFrequentRenterPoints = rented.calculateFrequentRenterPoints();
+            frequentRenterPoints += thisFrequentRenterPoints;
+        }
+        return frequentRenterPoints;
+    }
+
+
+    /**
+     *
+     * @return Total Amount.
+     */
+    public float amount() {
+        float totalAmount = 0.0f;
+        float thisPrice;
+        for (Rental rented : rentals) {
+            thisPrice = rented.calculatePriceMovie();
             totalAmount += thisPrice;
         }
-        return customerName().concat(" Price: ").concat(String.valueOf(totalAmount).concat(". FR points: ")
-                        .concat(String.valueOf(frequentRenterPoints)));
+        return totalAmount;
     }
 
     /**
