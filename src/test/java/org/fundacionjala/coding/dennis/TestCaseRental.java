@@ -160,6 +160,16 @@ public class TestCaseRental {
      *
      */
     @Test
+    public void testReturnFrequentPointsMovieNewReleasePass1() {
+        Movie mov = new MovieNewRelease("The house that Jack built");
+        final int expected = 1;
+        assertEquals(expected, mov.returnFrequentPoints(1));
+    }
+
+    /**
+     *
+     */
+    @Test
     public void testCalculateAmountMovieNewReleasePass() {
         Movie mov = new MovieNewRelease("A star is born");
         final double res = 12.0;
