@@ -94,4 +94,22 @@ public class FizzBuzzTest {
         final int num3 = 59;
         assertEquals(BUZZ, instance.fizzBuzz2(num3));
     }
+
+    /**
+     *
+     */
+    @Test
+    public void test10() {
+        final int num3 = 50;
+        assertEquals(BUZZ, instance.fizzBuzz2(num3));
+    }
+
+    /**
+     *
+     */
+    @Test
+    public void test11() {
+        final int num3 = 52;
+        assertEquals(BUZZ, instance.fizzBuzz2(num3));
+    }
 }
