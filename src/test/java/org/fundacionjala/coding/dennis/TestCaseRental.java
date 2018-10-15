@@ -17,6 +17,19 @@ public class TestCaseRental {
      *
      */
     @Test
+    public void testPriceMovieRentalPrincipal() {
+        Customer customer = new Customer("Dennis");
+        customer.addRental(new Rental(new MovieNewRelease("First Man"), 2));
+        customer.addRental(new Rental(new MovieRegular("Frost Vs Nixon"), 2));
+        customer.addRental(new Rental(new MovieChildren("UP"), 2));
+        customer.addRental(new Rental(new MovieNewRelease("The favourite"), DAYSRENTED));
+        assertEquals("Dennis Amount owed: 18.5 .Frequent renter points: 6", customer.statement());
+    }
+
+    /**
+     *
+     */
+    @Test
     public void testPriceMovieRentalAtmPass() {
         Rental rent = new Rental(new MovieNewRelease("Isle of dogs"), DAYSRENTED);
         final float expected = 9.0f;
@@ -48,7 +61,7 @@ public class TestCaseRental {
      */
     @Test
     public void testSetPriceCodeMoviePass() {
-        Movie mov = new MovieNewRelease("Annihilation");
+        Movie mov = new MovieNewRelease("10 Cloverfield Lane");
         mov.setpriceCode(PriceCode.REGULAR);
         final float expected = 2.0f;
         assertEquals(expected, mov.getPriceCode().getValue(), LIMIT);
@@ -59,8 +72,8 @@ public class TestCaseRental {
      */
     @Test
     public void testGetTitleMoviePass() {
-        Movie mov = new MovieNewRelease("Annihilation");
-        String expected = "Annihilation";
+        Movie mov = new MovieNewRelease("Gattaca");
+        String expected = "Gattaca";
         assertEquals(expected, mov.getTitle());
     }
 
@@ -80,7 +93,7 @@ public class TestCaseRental {
     @Test
     public void testAddRentalCustomerPass() {
         final int daysRented = 7;
-        Customer c = new Customer("Tester");
+        Customer c = new Customer("Tarantino");
         c.addRental(new Rental(new MovieRegular("Reservoir dogs"), daysRented));
         c.addRental(new Rental(new MovieRegular("Pulp Fiction"), daysRented));
         c.addRental(new Rental(new MovieRegular("Inglorious Bastards"), daysRented));
@@ -94,9 +107,9 @@ public class TestCaseRental {
      *
      */
     @Test
-    public void testGetNameCustomerPass() {
-        Customer c = new Customer("Tester");
-        String expected = "Tester";
+    public void testCustomerPass() {
+        Customer c = new Customer("Andres");
+        String expected = "Andres";
         assertEquals(expected, c.getName());
     }
 
@@ -104,9 +117,9 @@ public class TestCaseRental {
      *
      */
     @Test
-    public void testCustomerName() {
-        Customer c = new Customer("Tester");
-        String expected = "Rental Record for ".concat(c.getName());
+    public void testGetCustomerName() {
+        Customer c = new Customer("Luis");
+        String expected = c.getName();
         assertEquals(expected, c.customerName());
     }
 
@@ -115,7 +128,7 @@ public class TestCaseRental {
      */
     @Test
     public void testMovieAndPrice() {
-        Customer c = new Customer("Tester");
+        Customer c = new Customer("Xavier");
         Rental rent = new Rental(new MovieRegular("Fargo"), DAYSRENTED4);
         c.addRental(rent);
         final float price = 6.0f;
@@ -138,7 +151,7 @@ public class TestCaseRental {
      */
     @Test
     public void testReturnFrequentPointsMovieNewReleasePass() {
-        Movie mov = new MovieNewRelease("Widows");
+        Movie mov = new MovieNewRelease("The house that Jack built");
         final int expected = 2;
         assertEquals(expected, mov.returnFrequentPoints(DAYSRENTED));
     }

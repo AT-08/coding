@@ -44,22 +44,19 @@ public class Customer {
     /**
      * Calculus of data.
      */
-    public void statement() {
+    public String statement() {
         float totalAmount = 0.0f;
         float thisPrice;
         int frequentRenterPoints = 0;
         int thisFrequentRenterPoints;
-        System.out.println(customerName());
         for (Rental eachRental : rentals) {
             thisPrice = eachRental.calculatePriceMovie();
-            System.out.println(movieAndPrice(eachRental, thisPrice));
             thisFrequentRenterPoints = eachRental.calculateFrequentRenterPoints();
             frequentRenterPoints = frequentRenterPoints + thisFrequentRenterPoints;
             totalAmount += thisPrice;
         }
-        System.out.println("Amount owed is ".concat(String.valueOf(totalAmount)));
-        System.out.print("You earned ".concat(String.valueOf(frequentRenterPoints)));
-        System.out.println(" frequent renter points");
+        return customerName().concat(" Amount owed: ").concat(String.valueOf(totalAmount).concat(" .Frequent renter points: ")
+                        .concat(String.valueOf(frequentRenterPoints)));
     }
 
     /**
@@ -67,7 +64,7 @@ public class Customer {
      * @return give me the name.
      */
     public String customerName() {
-        return "Rental Record for ".concat(getName());
+        return getName();
     }
 
     /**
