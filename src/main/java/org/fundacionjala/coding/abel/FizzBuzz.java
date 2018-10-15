@@ -63,7 +63,7 @@ public class FizzBuzz {
         for (int i = 1; i <= LENGTH; i++) {
             if (i % FIZZ_NUM == 0 || String.valueOf(i).contains("3")) {
                 a[cont] = FIZZ;
-            } else if (i % FIZZ_NUM == 0 || String.valueOf(i).contains("5")) {
+            } else if (i % BUZZ_NUM == 0 || String.valueOf(i).contains("5")) {
                 a[cont] = BUZZ;
             } else {
                 a[cont] = String.valueOf(i);
