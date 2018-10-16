@@ -43,9 +43,10 @@ public class TestCaseRental {
      */
     @Test
     public void testFrequentRenterPointsAtmPass() {
-        Rental rent = new Rental(new MovieNewRelease("Infinity War"), DAYSRENTED);
+        Customer cust = new Customer("Gabriel");
+        cust.addRental(new Rental(new MovieNewRelease("Infinity War"), DAYSRENTED));
         int expected = 2;
-        assertEquals(expected, rent.calculateFrequentRenterPoints());
+        assertEquals(expected, cust.frequentPoints());
     }
 
     /**
@@ -86,7 +87,7 @@ public class TestCaseRental {
     public void testReturnFrequentPointsMoviePass() {
         Movie mov = new MovieChildren("Ice Age");
         int expected = 1;
-        assertEquals(expected, mov.returnFrequentPoints(DAYSRENTED));
+        assertEquals(expected, mov.returnFreqPoints());
     }
 
     /**
@@ -153,9 +154,10 @@ public class TestCaseRental {
      */
     @Test
     public void testReturnFrequentPointsMovieNewReleasePass() {
-        Movie mov = new MovieNewRelease("The house that Jack built");
+        Customer custom = new Customer("Jose");
+        custom.addRental(new Rental(new MovieNewRelease("The house that Jack built"), DAYSRENTED));
         final int expected = 2;
-        assertEquals(expected, mov.returnFrequentPoints(DAYSRENTED));
+        assertEquals(expected, custom.frequentPoints());
     }
 
     /**
@@ -163,9 +165,10 @@ public class TestCaseRental {
      */
     @Test
     public void testReturnFrequentPointsMovieNewReleasePass1() {
-        Movie mov = new MovieNewRelease("The house that Jack built");
+        Customer customNew = new Customer("Alicia");
+        customNew.addRental(new Rental(new MovieNewRelease("The house that Jack built"), 1));
         final int expected = 1;
-        assertEquals(expected, mov.returnFrequentPoints(1));
+        assertEquals(expected, customNew.frequentPoints());
     }
 
     /**

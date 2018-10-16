@@ -17,10 +17,14 @@ public class Rental {
 
     /**
      *
-     * @return Bonus points.
+     * @param film film a ser evaluado.
+     * @return frequent points bonus.
      */
-    public int calculateFrequentRenterPoints() {
-        return getMovie().returnFrequentPoints(getDaysRented());
+    public int calculateFrequentRenterPoints(final Movie film) {
+        if (film instanceof MovieNewRelease) {
+            return getDaysRented() > 1 ? 2 : film.returnFreqPoints();
+        }
+        return film.returnFreqPoints();
     }
 
     /**

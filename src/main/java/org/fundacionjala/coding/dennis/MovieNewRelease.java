@@ -25,14 +25,4 @@ public class MovieNewRelease extends Movie {
     public float calculateAmount(int nDays) {
         return nDays * getPriceCode().getValue();
     }
-
-    /**
-     *
-     * @param nDays days rented.
-     * @return frequent points bonus.
-     */
-    @Override
-    public int returnFrequentPoints(int nDays) {
-        return nDays > 1 ? TWO : 1;
-    }
 }
