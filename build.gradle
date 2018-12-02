@@ -1,9 +1,7 @@
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'idea'
-apply plugin: 'eclipse'
 apply plugin: 'checkstyle'
-apply plugin: 'pmd'
 apply plugin: 'findbugs'
 apply plugin: 'jacoco'
 
@@ -19,7 +17,7 @@ dependencies {
 
 // Checkstyle configuration
 checkstyle {
-    toolVersion = '8.8'
+    toolVersion = '8.15'
 }
 
 // FindBugs configuration
@@ -27,18 +25,6 @@ findbugs {
     toolVersion = '3.0.1'
 }
 tasks.withType(FindBugs) {
-    reports {
-        xml.enabled = false
-        html.enabled = true
-    }
-}
-
-// PMD configuration
-pmd {
-    ruleSets = ["java-basic", "java-braces", "java-unnecessary", "java-unusedcode", "java-strictexception"]
-    toolVersion = '6.0.0'
-}
-tasks.withType(Pmd) {
     reports {
         xml.enabled = false
         html.enabled = true
