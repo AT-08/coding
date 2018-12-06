@@ -40,7 +40,7 @@ public final class SortTheOdd {
      * @return an impar sorted array.
      */
     public static List<Integer> obtainImpar(final int[] array) {
-        List<Integer> listImp = new ArrayList<Integer>();
+        List<Integer> listImp = new ArrayList<>();
         for (int i : array) {
             if (i % 2 != 0) {
                 listImp.add(i);

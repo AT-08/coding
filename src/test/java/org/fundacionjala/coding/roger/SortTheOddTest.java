@@ -26,7 +26,6 @@ public class SortTheOddTest {
     public void exampleTest2() {
         final int[] input = new int[]{1, 3, 5, 8, 0};
         final int[] output = new int[]{5, 3, 1, 8, 0};
-
         assertArrayEquals(input, SortTheOdd.sortArray(output));
     }
 
