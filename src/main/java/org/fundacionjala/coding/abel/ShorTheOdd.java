@@ -1,48 +1,40 @@
 package org.fundacionjala.coding.abel;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-
+/**
+ * Shor the odd.
+ * You have an array of numbers.
+ * Your task is to sort ascending odd numbers but even numbers must be on their places.
+ * Zero isn't an odd number and you don't need to move it. If you have an empty array, you need to return it.
+ * Example:
+ * sortArray([5, 3, 2, 8, 1, 4]) == [1, 3, 2, 8, 5, 4]
+ */
 public class ShorTheOdd {
+    /**
+     * coonstructor.
+     */
+    public ShorTheOdd() {
+    }
 
-    public static int[] sortArray(int[] array) {
-        ShorTheOdd.print(array);
-
-        System.out.println("----------");
-        int num = 0;
-        ArrayList<Integer> number = new ArrayList<>();
+    /**
+     * This Method sort ascending odd numbers but even numbers must be on their places.
+     *
+     * @param array parameter of input.
+     * @return array ordered integer type.
+     */
+    public int[] sortArray(final int[] array) {
         for (int i = 0; i < array.length; i++) {
-            if (i % 2 != 0) {
-                number.add(i);
+            int aux = 0;
+            for (int j = 0; j < array.length; j++) {
+                if (array[i] < array[j] && array[i] % 2 != 0 && array[j] % 2 != 0) {
+                    aux = array[i];
+                    array[i] = array[j];
+                    array[j] = aux;
+                }
             }
         }
-
-        Comparator<Integer> comparador = Collections.;
-
-        Collections.sort(number,comparador);
-        for (int i = 0; i < array.length; i++) {
-            if (i % 2 != 0) {
-                array[i] = number.get(num);
-                System.out.println("*****"+number.get(num));
-
-
-                num=num+1;
-
-                System.out.println(">"+num);
-            }
-        }
-        ShorTheOdd.print(array);
         return array;
     }
-
-    public static void print(int[] a) {
-        for (int i = 0; i < a.length; i++) {
-            System.out.println(a[i]);
-        }
-    }
-
-
 }
+
 
 
