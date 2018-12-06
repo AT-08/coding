@@ -13,6 +13,7 @@ public class ShorTheOdd {
      * coonstructor.
      */
     public ShorTheOdd() {
+        // constructor
     }
 
     /**
