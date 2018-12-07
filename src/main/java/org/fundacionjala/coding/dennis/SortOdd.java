@@ -9,6 +9,7 @@ import java.util.Collections;
 public final class SortOdd {
 
     private static final int TWO = 2;
+    private static ArrayList<Integer> oddList;
 
     /**
      * Constructor.
@@ -24,15 +25,26 @@ public final class SortOdd {
      */
     public static int[] sortArray(final int[] array) {
         int[] finalList = new int[array.length];
-        ArrayList<Integer> oddList = new ArrayList<>(1);
+        oddList = new ArrayList<>(1);
         for (int number : array) {
             oddList.add(number);
         }
         oddList.removeIf(num -> num % TWO == 0);
         Collections.sort(oddList);
-        for (int index = 0, iOdd = 0; index < array.length; index++) {
-            finalList[index] = oddList.contains(array[index]) ? oddList.get(iOdd++) : array[index];
+        Collections.reverse(oddList);
+        for (int index = 0; index < array.length; index++) {
+            finalList[index] = oddList.contains(array[index]) ? getOdd() : array[index];
         }
         return finalList;
+    }
+
+    /**
+     * Return the odd number of the list and rotate for next number.
+     * @return an odd number.
+     */
+    private static int getOdd() {
+        int oddNumber = oddList.get(oddList.size() - 1);
+        Collections.rotate(oddList, 1);
+        return oddNumber;
     }
 }
