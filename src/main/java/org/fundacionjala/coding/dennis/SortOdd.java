@@ -3,25 +3,35 @@ package org.fundacionjala.coding.dennis;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class SortOdd {
+/**
+ * With an integer list, sort the odd numbers while even numbers remains in their positions.
+ */
+public final class SortOdd {
 
-    public static int[] sortArray(int[] array) {
-        ArrayList<Integer> oddList = new ArrayList<>(1);
-        ArrayList<Integer> oddListSort = new ArrayList<>(1);
+    private static final int TWO = 2;
+
+    /**
+     * Constructor.
+     */
+    private SortOdd() {
+
+    }
+
+    /**
+     *
+     * @param array array of integers.
+     * @return array of integers with only odd numbers sorted.
+     */
+    public static int[] sortArray(final int[] array) {
         int[] finalList = new int[array.length];
+        ArrayList<Integer> oddList = new ArrayList<>(1);
         for (int number : array) {
             oddList.add(number);
         }
-        oddList.removeIf(num -> num % 2 == 0);
-        oddListSort.addAll(oddList);
-        Collections.sort(oddListSort);
-        Collections.reverse(oddListSort);
-        for (int index = 0; index < array.length; index++) {
-            finalList[index] = array[index];
-            if (oddList.contains(array[index])) {
-                finalList[index] = oddListSort.get(oddListSort.size()-1);
-                Collections.rotate(oddListSort, 1);
-            }
+        oddList.removeIf(num -> num % TWO == 0);
+        Collections.sort(oddList);
+        for (int index = 0, iOdd = 0; index < array.length; index++) {
+            finalList[index] = oddList.contains(array[index]) ? oddList.get(iOdd++) : array[index];
         }
         return finalList;
     }
