@@ -1,7 +1,50 @@
 package org.fundacionjala.coding.abel;
 
+import java.util.StringJoiner;
+
 /**
- *
+ * Imagine the scene. You are eleven years old, and in the five minutes before the end of the lesson,
+ * your Maths teacher decides he should make his class more "fun" by introducing a "game".
+ * He explains that he is going to point at each pupil in turn and ask them to say the next number in sequence,
+ * starting from one. The "fun" part is that if the number is divisible by three,
+ * you instead say "Fizz" and if it is divisible by five you say "Buzz".
+ * So now your maths teacher is pointing at all of your classmates in turn,
+ * and they happily shout "one", "two", "Fizz", "four", "Buzz" until he very deliberately points at you,
+ * fixing you with a steely gaze. time stands still, your mouth dries up,
+ * your palms become sweatier and sweatier until you finally manage to croak "Fizz". Doom is avoided,
+ * and the pointing finger moves on.
+ * So of course in order to avoid embarassment infront of your whole class,
+ * you have to get the full list printed out so you know what to say. Your class has about 33 pupils and
+ * he might go round three times before the bell rings for breaktime. Next maths lesson is on Thursday. Get coding!
+ * Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of
+ * the number and for the multiples of five print "Buzz". For numbers which are multiples of both
+ * three and five print "FizzBuzz".
+ * Sample output:
+ * 1
+ * 2
+ * Fizz
+ * 4
+ * Buzz
+ * Fizz
+ * 7
+ * 8
+ * Fizz
+ * Buzz
+ * 11
+ * Fizz
+ * 13
+ * 14
+ * FizzBuzz
+ * 16
+ * 17
+ * Fizz
+ * 19
+ * Buzz
+ * etc up to 100
+ * <p>
+ * Stage 2 - new requirements
+ * A number is fizz if it is divisible by 3 or if it has a 3 in it
+ * A number is buzz if it is divisible by 5 or if it has a 5 in it
  */
 public class FizzBuzz {
 
@@ -11,37 +54,32 @@ public class FizzBuzz {
     private static final String FIZZBUZZ = "FizzBuzz";
     private static final String FIZZ = "Fizz";
     private static final String BUZZ = "Buzz";
-    private static final int LENGTH = 100;
 
 
     /**
-     * @param indice vaue of input
+     * @param index vaue of input
      * @return value return
      */
-    public String fizzBuzz2(int indice) {
-        String[] container = generated2();
-        return container[indice - 1];
+    public String fizzBuzz(final int index) {
+        StringJoiner container = new StringJoiner("\n");
+        for (int i = 1; i <= index; i++) {
+            container.add(generated(i));
+        }
+        return container.toString();
     }
 
     /**
-     * @return value of return
+     * @param number of int type.
+     * @return value of string type.
      */
-    public String[] generated2() {
-        String[] a = new String[LENGTH];
-        int cont = 0;
-        for (int i = 1; i <= LENGTH; i++) {
-
-            if (i % FIZZBUZZ_NUM == 0) {
-                a[cont] = FIZZBUZZ;
-            } else if (i % FIZZ_NUM == 0 || String.valueOf(i).contains("3")) {
-                a[cont] = FIZZ;
-            } else if (i % BUZZ_NUM == 0 || String.valueOf(i).contains("5")) {
-                a[cont] = BUZZ;
-            } else {
-                a[cont] = String.valueOf(i);
-            }
-            cont++;
+    public String generated(final int number) {
+        if (number % FIZZBUZZ_NUM == 0) {
+            return FIZZBUZZ;
+        } else if (number % FIZZ_NUM == 0 || String.valueOf(number).contains("3")) {
+            return FIZZ;
+        } else if (number % BUZZ_NUM == 0 || String.valueOf(number).contains("5")) {
+            return BUZZ;
         }
-        return a;
+        return String.valueOf(number);
     }
 }

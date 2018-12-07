@@ -6,16 +6,14 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- *
+ * this class make to test a the FizzBuzz class.
  */
 public class FizzBuzzTest {
+
     private FizzBuzz instance;
-    private static final String FIZZ = "Fizz";
-    private static final String BUZZ = "Buzz";
-    private static final String FIZZ_BUZZ = "FizzBuzz";
 
     /**
-     *
+     * instance of FizzBuzz class.
      */
     @Before
     public void before() {
@@ -23,93 +21,33 @@ public class FizzBuzzTest {
     }
 
     /**
-     *
+     * test fist part.
      */
     @Test
-    public void test() {
-        final int num = 3;
-        assertEquals(FIZZ, instance.fizzBuzz2(num));
+    public void convertNumberTestAnyNumber() {
+        final int num1 = 1;
+        final int num = 5;
+        final int num13 = 13;
+        final int num29 = 29;
+        final int num15 = 15;
+        final int num93 = 93;
+
+        assertEquals("1", instance.generated(num1));
+        assertEquals("Buzz", instance.generated(num));
+        assertEquals("Fizz", instance.generated(num13));
+        assertEquals("29", instance.generated(num29));
+        assertEquals("FizzBuzz", instance.generated(num15));
+        assertEquals("Fizz", instance.generated(num93));
     }
 
     /**
-     *
+     * Test the second part.
      */
     @Test
-    public void test2() {
-        final int num2 = 5;
-        assertEquals(BUZZ, instance.fizzBuzz2(num2));
+    public void secondPart() {
+        final int num13 = 13;
+        assertEquals("1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\nFizz",
+                instance.fizzBuzz(num13));
     }
 
-    /**
-     *
-     */
-    @Test
-    public void test3() {
-        final int num3 = 15;
-        assertEquals(FIZZ_BUZZ, instance.fizzBuzz2(num3));
-    }
-
-    /**
-     *
-     */
-    @Test
-    public void test4() {
-        final int num3 = 60;
-        assertEquals(FIZZ_BUZZ, instance.fizzBuzz2(num3));
-    }
-
-    /**
-     *
-     */
-    @Test
-    public void test5() {
-        final int num3 = 13;
-        assertEquals(FIZZ, instance.fizzBuzz2(num3));
-    }
-
-
-    /**
-     *
-     */
-    @Test
-    public void test6() {
-        final int num3 = 36;
-        assertEquals(FIZZ, instance.fizzBuzz2(num3));
-    }
-
-    /**
-     *
-     */
-    @Test
-    public void test7() {
-        final int num3 = 25;
-        assertEquals(BUZZ, instance.fizzBuzz2(num3));
-    }
-
-    /**
-     *
-     */
-    @Test
-    public void test9() {
-        final int num3 = 59;
-        assertEquals(BUZZ, instance.fizzBuzz2(num3));
-    }
-
-    /**
-     *
-     */
-    @Test
-    public void test10() {
-        final int num3 = 50;
-        assertEquals(BUZZ, instance.fizzBuzz2(num3));
-    }
-
-    /**
-     *
-     */
-    @Test
-    public void test11() {
-        final int num3 = 52;
-        assertEquals(BUZZ, instance.fizzBuzz2(num3));
-    }
 }
