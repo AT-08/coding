@@ -1,8 +1,8 @@
 package org.fundacionjala.coding.roger;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * You have an array of numbers.
@@ -40,13 +40,10 @@ public final class SortTheOdd {
      * @return an impar sorted array.
      */
     public static List<Integer> obtainImpar(final int[] array) {
-        List<Integer> listImp = new ArrayList<>();
-        for (int i : array) {
-            if (i % 2 != 0) {
-                listImp.add(i);
-            }
-        }
-        Collections.sort(listImp);
-        return listImp;
+        return Arrays.stream(array)
+                .filter(i -> i % 2 != 0)
+                .sorted()
+                .boxed()
+                .collect(Collectors.toList());
     }
 }
