@@ -1,11 +1,13 @@
 package org.fundacionjala.coding.nestor.movie;
 
+import java.util.List;
+
 /**
  * Class to implement customer behavior.
  */
 public class Customer {
   private String name;
-  private Rental rental;
+  private Rental movies;
 
   /**
    * Constructor.
@@ -31,7 +33,7 @@ public class Customer {
    * @param daysRented type integer.
    */
   public void createRental(int daysRented) {
-    rental = new Rental(daysRented);
+    movies = new Rental(daysRented);
   }
 
   /**
@@ -40,6 +42,15 @@ public class Customer {
    * @param movie type Movie.
    */
   public void addMovie(final Movie movie) {
-    rental.addMovie(movie);
+    movies.addMovie(movie);
+  }
+
+  /**
+   * Method to get movies list.
+   *
+   * @return Movies list.
+   */
+  public List<Movie> getMoviesList() {
+    return movies.getMoviesList();
   }
 }
