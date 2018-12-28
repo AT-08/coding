@@ -11,6 +11,7 @@ import static org.junit.Assert.assertEquals;
 public class RentalTest {
     private Rental rental;
     private Movie up;
+    private Movie passengers;
 
     /**
      * Method to setup before testing.
@@ -21,6 +22,7 @@ public class RentalTest {
 
         rental = new Rental(five);
         up = new ChildrenMovie("Up");
+        passengers = new NewReleaseMovie("Passengers");
     }
 
     /**
@@ -58,8 +60,9 @@ public class RentalTest {
      */
     @Test
     public void getMoviesList() {
-        final int one = 1;
+        final int two = 2;
         rental.addMovie(up);
-        assertEquals(one, rental.getMoviesList().toArray().length);
+        rental.addMovie(passengers);
+        assertEquals(two, rental.getMoviesList().toArray().length);
     }
 }
