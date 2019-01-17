@@ -9,7 +9,9 @@ public class BoardTest {
     @Test
     public void test1() {
         board = new Board();
-        board.createBoard();
+        board.createBoard(3);
         board.change("11");
     }
+
+
 }

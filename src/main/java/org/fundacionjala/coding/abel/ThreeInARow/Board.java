@@ -10,12 +10,15 @@ import java.util.TreeMap;
  */
 public class Board {
     Map<String, Box> Board = new TreeMap<String, Box>();
-    void createBoard() {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+    void createBoard(final int  size) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
                 Board.put(i + "" + j, new Box("empty"));
             }
         }
+
+
+        printBoard();
     }
 
     /**
@@ -24,7 +27,9 @@ public class Board {
      */
     void change(String inputvalue) {
        Board.put(inputvalue, new Box("azul"));
-    }
+       System.out.println("-- board modified --");
+       printBoard();
+           }
 
     /**
      *
