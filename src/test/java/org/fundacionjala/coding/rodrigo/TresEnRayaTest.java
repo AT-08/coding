@@ -23,14 +23,14 @@ public class TresEnRayaTest {
     private static final int POS_SEVEN = 7;
     private static final int POS_EIGHT = 8;
     private static final int POS_NINE = 9;
-    private final String[][] emptyTableGame = {{" ", " ", " "}, {" ", " ", " "}, {" ", " ", " "}};
+    private static final String[][] EMPTY_TABLE_GAME = {{" ", " ", " "}, {" ", " ", " "}, {" ", " ", " "}};
 
     /**
      * Setting up the game.
      */
     @Before
     public void setUp() {
-        tresEnRaya = new TresEnRaya(emptyTableGame);
+        tresEnRaya = new TresEnRaya(EMPTY_TABLE_GAME);
     }
 
     /**
@@ -103,8 +103,8 @@ public class TresEnRayaTest {
      */
     @Test
     public void phase4Players() {
-        Player juan = new Player(Marks.X, emptyTableGame);
-        Player jorge = new Player(Marks.O, emptyTableGame);
+        Player juan = new Player(Marks.X, EMPTY_TABLE_GAME);
+        Player jorge = new Player(Marks.O, EMPTY_TABLE_GAME);
         jorge.play(POS_ONE);
         juan.play(POS_TWO);
         jorge.play(POS_FIVE);
