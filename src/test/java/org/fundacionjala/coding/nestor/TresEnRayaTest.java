@@ -26,7 +26,7 @@ public class TresEnRayaTest {
      */
     @Test
     public void testBoardCanAcceptMark() {
-        assertTrue("Is marl X",
+        assertTrue("Is mark X.",
                 MARK_X.equalsIgnoreCase(Character.toString(tablero.getCellValue(1, 1))));
     }
 
@@ -34,7 +34,11 @@ public class TresEnRayaTest {
      * Method to verify if last move is won.
      */
     @Test
-    public void testLastMoveIsWon() { }
+    public void testLastMoveIsWon() {
+        tablero.makeMove(1,2,'X');
+        tablero.makeMove(1,3,'X');
+        assertTrue("Last move is winner.", tablero.isMoveWinner());
+    }
 
     /**
      * Method to verify if player is draw.

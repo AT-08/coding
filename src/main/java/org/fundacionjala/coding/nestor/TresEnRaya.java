@@ -52,4 +52,65 @@ public class TresEnRaya {
     public char getCellValue(int row, int col) {
         return board[row - 1][col - 1];
     }
+
+    /**
+     * Method to verify is last move was winner.
+     * @return
+     */
+    public boolean isMoveWinner() {
+        return isAnyColWinner() || isAnyRowWinner() || isAnyDiagonalWinner();
+    }
+
+    /**
+     * Method to verify what type es all elements.
+     * @param elements type array of chars.
+     * @return boolean.
+     */
+    private boolean isTheSameMark(char[] elements) {
+        char first = elements[0];
+        if (first != EMPTY) {
+            return elements[0] == elements[1] && elements[0] == elements[2];
+        }
+        return false;
+    }
+
+    /**
+     * Method to verify if some row is winner.
+     * @return boolean.
+     */
+    private boolean isAnyRowWinner() {
+        for (int row = 0; row < ROWS; row++) {
+            char[] elements = {board[row][0], board[row][1], board[row][2]};
+            if (isTheSameMark(elements)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Method to verify if some column is winner.
+     * @return
+     */
+    private boolean isAnyColWinner() {
+        for (int col = 0; col < COLS; col++) {
+            char[] elements = {board[0][col], board[1][col], board[2][col]};
+            if (isTheSameMark(elements)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Method to verify if some diagonal is winner.
+     * @return boolean.
+     */
+    private boolean isAnyDiagonalWinner() {
+        int row = 0;
+        int col = 0;
+        char[] leftToRight = {board[row][col], board[row++][col++], board[row++][col++]};
+        char[] rightToLeft = {board[row][col], board[row--][col--], board[row--][col--]};
+        return isTheSameMark(leftToRight) || isTheSameMark(rightToLeft);
+    }
 }
