@@ -35,8 +35,10 @@ public class TresEnRayaTest {
      */
     @Test
     public void testLastMoveIsWon() {
-        tablero.makeMove(1,2,'X');
-        tablero.makeMove(1,3,'X');
+        final int row = 1;
+        final int col = 2;
+        tablero.makeMove(row, col, 'X');
+        tablero.makeMove(row, col + 1, 'X');
         assertTrue("Last move is winner.", tablero.isMoveWinner());
     }
 

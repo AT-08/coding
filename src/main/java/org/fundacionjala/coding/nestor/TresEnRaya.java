@@ -55,7 +55,7 @@ public class TresEnRaya {
 
     /**
      * Method to verify is last move was winner.
-     * @return
+     * @return boolean.
      */
     public boolean isMoveWinner() {
         return isAnyColWinner() || isAnyRowWinner() || isAnyDiagonalWinner();
@@ -66,7 +66,7 @@ public class TresEnRaya {
      * @param elements type array of chars.
      * @return boolean.
      */
-    private boolean isTheSameMark(char[] elements) {
+    private boolean isTheSameMark(final char[] elements) {
         char first = elements[0];
         if (first != EMPTY) {
             return elements[0] == elements[1] && elements[0] == elements[2];
@@ -90,7 +90,7 @@ public class TresEnRaya {
 
     /**
      * Method to verify if some column is winner.
-     * @return
+     * @return boolean.
      */
     private boolean isAnyColWinner() {
         for (int col = 0; col < COLS; col++) {
