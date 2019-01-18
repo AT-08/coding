@@ -24,7 +24,6 @@ public class Cacho {
         Arrays.sort(array);
         List<Integer> listOfDices = Arrays.stream(array).boxed().collect(Collectors.toList());
         HashSet<Integer> dicesCount = countDices(listOfDices);
-        int puntaje;
         int a;
         if (dicesCount.size() == 1) {
             a = Integer.parseInt(listOfDices.stream()
@@ -35,16 +34,18 @@ public class Cacho {
                     .map(String::valueOf)
                     .collect(Collectors.joining("")));
         }
-        System.out.println("num==" + a);
-        System.out.println("Number of times who the dices repeat==" + dicesCount);
+        int score;
         if (CATEGORY.containsKey(a)) {
             System.out.println(CATEGORY.get(a));
             return CATEGORY.get(a).getScore();
         } else {
             int maxNumber = Arrays.stream(array).max().getAsInt();
-            puntaje = maxNumber * Collections.frequency(listOfDices, maxNumber);
+            int scoreOfMaximun = maxNumber * Collections.frequency(listOfDices, maxNumber);
+            int numberMostRepeated = diceMostRepeated(listOfDices);
+            int scoreOfMostRepeated = numberMostRepeated * Collections.frequency(listOfDices, numberMostRepeated);
+            score = scoreOfMaximun > scoreOfMostRepeated ? scoreOfMaximun : scoreOfMostRepeated;
         }
-        return puntaje;
+        return score;
     }
 
     private HashSet<Integer> countDices(List<Integer> listOfDices) {
@@ -55,5 +56,17 @@ public class Cacho {
         return dicesCount;
     }
 
+    private int diceMostRepeated(List<Integer> listOfDices) {
+        int numberOfTimes = 0;
+        int diceMostRepeated = 0;
+        for (int i : listOfDices) {
+            final int frequency = Collections.frequency(listOfDices, i);
+            if (frequency > numberOfTimes) {
+                diceMostRepeated = i;
+                numberOfTimes = frequency;
+            }
+        }
+        return diceMostRepeated;
+    }
 }
 
