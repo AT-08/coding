@@ -27,7 +27,7 @@ public class Board {
     }
 
     void change(Box casilla) {
-        taler[casilla.getFile()][casilla.getRow()].setValue(casilla.getValue());
+        taler[casilla.getRow()][casilla.getFile()].setValue(casilla.getValue());
         printBoard();
     }
 

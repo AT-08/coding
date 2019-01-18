@@ -30,28 +30,47 @@ public class Main {
         String Player1 = "";
         String Player2 = "";
 
-        Box casilla ;
-        while (index++ < 4) {
+        Box casilla;
+        String win = "";
+        boolean estado2 = false;
+        while (estado2 == false) {
+            System.out.println("Juega player 1");
 
             System.out.println("ingrese fila:");
             int fila = leer.nextInt();
-
-
             System.out.println("ingrese Columna:");
             int columna = leer.nextInt();
-
             System.out.println("ingrese Valor: ");
             String valor = leer.next();
 
-
-     tablero.change(new Box(valor,fila,columna));
-
+            tablero.change(new Box(valor, fila, columna));
             Player1 = Player1.concat(String.valueOf(fila)).concat(String.valueOf(columna));
-            tablero.verifyWin(Player1);
+            if (tablero.verifyWin(Player1) == true) {
+                estado2 = true;
+                win = "player2";
+            }
+
+            System.out.println("Juega player 2");
+
+            System.out.println("ingrese fila:");
+            int fila2 = leer.nextInt();
+            System.out.println("ingrese Columna:");
+            int columna2 = leer.nextInt();
+            System.out.println("ingrese Valor: ");
+            String valor2 = leer.next();
+
+
+            tablero.change(new Box(valor2, fila2, columna2));
+
+            Player2 = Player2.concat(String.valueOf(fila2)).concat(String.valueOf(columna2));
+            if (tablero.verifyWin(Player2) == true) {
+                estado2 = true;
+                win = "player2";
+            }
 
 
         }
 
-
+        System.out.println("the win is :" + win);
     }
 }
