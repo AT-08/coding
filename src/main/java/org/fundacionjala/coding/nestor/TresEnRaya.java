@@ -1,5 +1,8 @@
 package org.fundacionjala.coding.nestor;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Class Tres en Raya.
  */
@@ -8,6 +11,7 @@ public class TresEnRaya {
     private static final char EMPTY = ' ';
     private static final int ROWS = 3;
     private static final int COLS = 3;
+    private Map<Character, String> players;
 
     /**
      * Method constructor.
@@ -19,6 +23,7 @@ public class TresEnRaya {
                 board[row][col] = EMPTY;
             }
         }
+        players = new HashMap<>();
     }
 
     /**
@@ -110,5 +115,47 @@ public class TresEnRaya {
         char[] leftToRight = {board[0][0], board[1][1], board[2][2]};
         char[] rightToLeft = {board[0][2], board[1][1], board[2][0]};
         return isTheSameMark(leftToRight) || isTheSameMark(rightToLeft);
+    }
+
+    /**
+     * Method to verify if board is full filled.
+     * @return boolean.
+     */
+    public boolean isBoardFullFilled() {
+        for (int row = 0; row < ROWS; row++) {
+            for (int col = 0; col < COLS; col++) {
+                if (board[row][col] == EMPTY) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Method to add a player into game.
+     * @param mark type char.
+     * @param name type string.
+     */
+    public void addPlayer(final char mark, final String name) {
+        players.put(mark, name);
+    }
+
+    /**
+     * Method to get player's name given a mark.
+     * @param mark type char.
+     * @return type string.
+     */
+    public String getPlayerName(final char mark) {
+        return players.get(mark);
+    }
+
+    /**
+     * Method to verify is some mark is used by some one player.
+     * @param mark type char.
+     * @return type boolean.
+     */
+    public boolean isPlayerMark(final char mark) {
+        return players.containsKey(mark);
     }
 }

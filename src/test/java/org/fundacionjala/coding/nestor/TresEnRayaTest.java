@@ -10,7 +10,6 @@ import static org.junit.Assert.assertTrue;
  */
 public class TresEnRayaTest {
     private TresEnRaya tablero;
-    private static final String MARK_X = "X";
 
     /**
      * Method to initialize tablero object.
@@ -27,7 +26,7 @@ public class TresEnRayaTest {
     @Test
     public void testBoardCanAcceptMark() {
         assertTrue("Is mark X.",
-                MARK_X.equalsIgnoreCase(Character.toString(tablero.getCellValue(1, 1))));
+                "X".equalsIgnoreCase(Character.toString(tablero.getCellValue(1, 1))));
     }
 
     /**
@@ -47,7 +46,19 @@ public class TresEnRayaTest {
      */
     @Test
     public void testIsDraw() {
-        assertTrue(true);
+        final TresEnRaya boardDraw = new TresEnRaya();
+        final int row = 1;
+        final int col = 1;
+        boardDraw.makeMove(row, col, 'X');
+        boardDraw.makeMove(row + 1, col, '0');
+        boardDraw.makeMove(row + 2, col, 'X');
+        boardDraw.makeMove(row, col + 1, '0');
+        boardDraw.makeMove(row + 1, col + 1, 'X');
+        boardDraw.makeMove(row + 2, col + 1, '0');
+        boardDraw.makeMove(row, col + 2, '0');
+        boardDraw.makeMove(row + 1, col + 2, 'X');
+        boardDraw.makeMove(row + 2, col + 2, '0');
+        assertTrue("Players are draw", boardDraw.isBoardFullFilled());
     }
 
     /**
@@ -55,7 +66,8 @@ public class TresEnRayaTest {
      */
     @Test
     public void testAddPlayer() {
-        assertTrue(true);
+        tablero.addPlayer('0', "Player One");
+        assertTrue("Player success added", "Player One".contentEquals(tablero.getPlayerName('0')));
     }
 
     /**
@@ -63,6 +75,7 @@ public class TresEnRayaTest {
      */
     @Test
     public void testChooseMark() {
-        assertTrue(true);
+        tablero.addPlayer('X', "Player Two");
+        assertTrue("Exist X mark", tablero.isPlayerMark('X'));
     }
 }
