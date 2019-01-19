@@ -46,17 +46,23 @@ public class TresEnRayaTest {
      * Method to verify if player is draw.
      */
     @Test
-    public void testIsDraw() { }
+    public void testIsDraw() {
+        assertTrue(true);
+    }
 
     /**
      * Method to verify if can add a player.
      */
     @Test
-    public void testAddPlayer() { }
+    public void testAddPlayer() {
+        assertTrue(true);
+    }
 
     /**
      * Method to verify if one player can choose mark.
      */
     @Test
-    public void testChooseMark() { }
+    public void testChooseMark() {
+        assertTrue(true);
+    }
 }

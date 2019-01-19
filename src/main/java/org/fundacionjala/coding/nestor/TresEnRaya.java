@@ -107,10 +107,8 @@ public class TresEnRaya {
      * @return boolean.
      */
     private boolean isAnyDiagonalWinner() {
-        int row = 0;
-        int col = 0;
-        char[] leftToRight = {board[row][col], board[row++][col++], board[row++][col++]};
-        char[] rightToLeft = {board[row][col], board[row--][col--], board[row--][col--]};
+        char[] leftToRight = {board[0][0], board[1][1], board[2][2]};
+        char[] rightToLeft = {board[0][2], board[1][1], board[2][0]};
         return isTheSameMark(leftToRight) || isTheSameMark(rightToLeft);
     }
 }
