@@ -23,8 +23,9 @@ public class DigitalRootTest {
      */
     @Test
     public void testOneDigit() {
+        final int result = 5;
         data = ONE_DIGIT;
-        assertEquals(ONE_DIGIT, DigitalRoot.digitalroot(data));
+        assertEquals(result, DigitalRoot.digitalroot(data));
     }
 
     /**

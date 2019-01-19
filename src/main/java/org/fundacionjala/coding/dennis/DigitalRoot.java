@@ -21,29 +21,9 @@ public final class DigitalRoot {
      * @return digital root of inNumber.
      */
     public static int digitalroot(int inNumber) {
-        int result = inNumber;
-        while (!isOneDigitNumber(result)) {
-            result = root(result);
+        while (inNumber >  TEN - 1) {
+            inNumber = inNumber % TEN + digitalroot(inNumber / TEN);
         }
-        return result;
-    }
-
-    /**
-     *
-     * @param inNumber data to evaluate.
-     * @return boolean to know if number is only one digit.
-     */
-    private static boolean isOneDigitNumber(int inNumber) {
-        int digitCount = String.valueOf(inNumber).length();
-        return digitCount == 1;
-    }
-
-    /**
-     *
-     * @param inNumber data to know a partial root
-     * @return partial root (it can be more than 2 digits length).
-     */
-    private static int root(int inNumber) {
-        return isOneDigitNumber(inNumber) ? inNumber : inNumber % TEN + root(inNumber / TEN);
+        return inNumber;
     }
 }
