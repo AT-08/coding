@@ -25,14 +25,17 @@ public class Cacho {
         List<Integer> listOfDices = Arrays.stream(array).boxed().collect(Collectors.toList());
         HashSet<Integer> dicesCount = countDices(listOfDices);
         int a;
-        if (dicesCount.size() == 1) {
+        System.out.println(dicesCount.size()+"num of dices");
+        if (dicesCount.size() == 5) {
             a = Integer.parseInt(listOfDices.stream()
                     .map(String::valueOf)
                     .collect(Collectors.joining("")));
+            System.out.println("A->"+a);
         } else {
             a = Integer.parseInt(dicesCount.stream()
                     .map(String::valueOf)
                     .collect(Collectors.joining("")));
+            System.out.println("B->"+a);
         }
         int score;
         if (CATEGORY.containsKey(a)) {
@@ -51,6 +54,10 @@ public class Cacho {
     private HashSet<Integer> countDices(List<Integer> listOfDices) {
         HashSet<Integer> dicesCount = new HashSet<>();
         for (int i : listOfDices) {
+            if (Collections.frequency(listOfDices, i) == listOfDices.size()) {
+                dicesCount.add(Collections.frequency(listOfDices, i));
+                break;
+            }
             dicesCount.add(Collections.frequency(listOfDices, i));
         }
         return dicesCount;
