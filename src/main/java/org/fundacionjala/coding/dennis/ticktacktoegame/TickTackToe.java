@@ -156,11 +156,4 @@ public final class TickTackToe {
         }
         return draw;
     }
-
-    /**
-     * Do nothing.
-     */
-    public void pause() {
-
-    }
 }

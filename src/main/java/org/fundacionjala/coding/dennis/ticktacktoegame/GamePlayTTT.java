@@ -58,7 +58,7 @@ public class GamePlayTTT {
          */
         boolean turnPlayer1 = true;
         while (gameBoard.checkStatusGame().equals("Game continues")) {
-            turnFunction(turnPlayer1 ? player1 : player2, gameBoard);
+            turnFunction(turnPlayer1 ? player1 : player2);
             turnPlayer1 = !turnPlayer1;
         }
         return gameBoard.checkStatusGame();
@@ -67,15 +67,13 @@ public class GamePlayTTT {
     /**
      * functions of the player in turn.
      * @param player instance of ToePlayer class.
-     * @param gameBoard instance of TickTackToe class.
      */
-    private void turnFunction(final ToePlayer player, final TickTackToe gameBoard) {
+    private void turnFunction(final ToePlayer player) {
         /**PRINT
           System.out.println("Turn of ".concat(Character.toString(player.getToken())));
           playerMessages();
          */
         putPosition(player);
-        gameBoard.pause();
         /**PRINT
           gameBoard.getTable();
          */
