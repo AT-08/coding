@@ -1,0 +1,29 @@
+In order to play the game, add a new java class with the next code:
+Something more: descoment the functions with the keyword PRINT in the classes. They are for print in console.
+
+package org.fundacionjala.coding.dennis.ticktacktoeGame;
+
+/**
+ * Main class for Tick-Tack-Toe game.
+ */
+public final class MainTickTackToe {
+
+    /**
+     * Constructor.
+     */
+    public MainTickTackToe() {
+
+    }
+
+    /**
+     * Main.
+     * @param args I don't know what is this, but always is here.
+     */
+    public static void main(final String[] args) {
+        ToePlayer player1 = new ToePlayer('x');
+        ToePlayer player2 = new ToePlayer('o');
+        TickTackToe gameBoard = TickTackToe.getGameBoard();
+        GamePlayTTT toe = new GamePlayTTT(player1, player2, gameBoard);
+        System.out.println(toe.game());
+    }
+}
