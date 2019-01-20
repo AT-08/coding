@@ -59,6 +59,9 @@ public class GamePlayTTT {
         boolean turnPlayer1 = true;
         while (gameBoard.checkStatusGame().equals("Game continues")) {
             turnFunction(turnPlayer1 ? player1 : player2);
+            /**PRINT
+             gameBoard.getTable();
+             */
             turnPlayer1 = !turnPlayer1;
         }
         return gameBoard.checkStatusGame();
@@ -74,9 +77,6 @@ public class GamePlayTTT {
           playerMessages();
          */
         putPosition(player);
-        /**PRINT
-          gameBoard.getTable();
-         */
     }
 
     /**

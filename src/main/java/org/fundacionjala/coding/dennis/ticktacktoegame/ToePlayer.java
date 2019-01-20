@@ -31,10 +31,6 @@ public class ToePlayer {
      * @return State of the action.
      */
     public String putToken(final int row, final int column) {
-        String resultMessage = gameBoard.putToken(token, row, column);
-        /**PRINT
-          gameBoard.getTable();
-         */
-        return resultMessage;
+        return gameBoard.putToken(token, row, column);
     }
 }
