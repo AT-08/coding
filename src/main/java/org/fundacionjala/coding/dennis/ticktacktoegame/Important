@@ -1,7 +1,7 @@
 In order to play the game, add a new java class with the next code:
 Something more: descoment the functions with the keyword PRINT in the classes. They are for print in console.
 
-package org.fundacionjala.coding.dennis.ticktacktoeGame;
+package org.fundacionjala.coding.dennis.ticktacktoegame;
 
 /**
  * Main class for Tick-Tack-Toe game.

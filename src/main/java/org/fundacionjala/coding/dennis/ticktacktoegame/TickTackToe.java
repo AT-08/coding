@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.dennis.ticktacktoeGame;
+package org.fundacionjala.coding.dennis.ticktacktoegame;
 
 /**
  * Tick-Tack-Toe board.
@@ -155,5 +155,12 @@ public final class TickTackToe {
             }
         }
         return draw;
+    }
+
+    /**
+     * Do nothing.
+     */
+    public void pause() {
+
     }
 }

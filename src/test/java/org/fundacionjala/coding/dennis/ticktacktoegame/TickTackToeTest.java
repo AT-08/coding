@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.dennis.ticktacktoeGame;
+package org.fundacionjala.coding.dennis.ticktacktoegame;
 
 import org.junit.Test;
 
@@ -9,6 +9,9 @@ import static org.junit.Assert.assertTrue;
  * Tests for the different status of the board.
  */
 public class TickTackToeTest {
+
+    private String resultWin = "You win";
+    private String resultContinues = "Game continues";
 
     /**
      * Check for game draw.
@@ -31,8 +34,7 @@ public class TickTackToeTest {
         game.setTable(new char[]{'x', '_', 'x'},
                 new char[]{'_', 'x', 'o'},
                 new char[]{'o', 'o', 'x'});
-        String result = "You win";
-        assertEquals(result, game.checkStatusGame());
+        assertEquals(resultWin, game.checkStatusGame());
     }
 
     /**
@@ -44,8 +46,7 @@ public class TickTackToeTest {
         game.setTable(new char[]{'o', 'o', 'x'},
                 new char[]{'_', 'x', 'o'},
                 new char[]{'x', '_', 'x'});
-        String result = "You win";
-        assertEquals(result, game.checkStatusGame());
+        assertEquals(resultWin, game.checkStatusGame());
     }
 
     /**
@@ -57,8 +58,7 @@ public class TickTackToeTest {
         game.setTable(new char[]{'x', 'o', 'o'},
                 new char[]{'x', 'x', '_'},
                 new char[]{'x', '_', 'o'});
-        String result = "You win";
-        assertEquals(result, game.checkStatusGame());
+        assertEquals(resultWin, game.checkStatusGame());
     }
 
     /**
@@ -70,8 +70,7 @@ public class TickTackToeTest {
         game.setTable(new char[]{'o', 'x', 'x'},
                 new char[]{'o', 'x', '_'},
                 new char[]{'_', 'x', 'o'});
-        String result = "You win";
-        assertEquals(result, game.checkStatusGame());
+        assertEquals(resultWin, game.checkStatusGame());
     }
 
     /**
@@ -83,8 +82,7 @@ public class TickTackToeTest {
         game.setTable(new char[]{'o', 'o', 'x'},
                 new char[]{'x', 'o', 'x'},
                 new char[]{'_', '_', 'x'});
-        String result = "You win";
-        assertEquals(result, game.checkStatusGame());
+        assertEquals(resultWin, game.checkStatusGame());
     }
 
     /**
@@ -96,8 +94,7 @@ public class TickTackToeTest {
         game.setTable(new char[]{'o', 'o', 'o'},
                 new char[]{'x', '_', 'x'},
                 new char[]{'_', '_', 'x'});
-        String result = "You win";
-        assertEquals(result, game.checkStatusGame());
+        assertEquals(resultWin, game.checkStatusGame());
     }
 
     /**
@@ -109,8 +106,7 @@ public class TickTackToeTest {
         game.setTable(new char[]{'x', '_', '_'},
                 new char[]{'o', 'o', 'o'},
                 new char[]{'x', '_', 'x'});
-        String result = "You win";
-        assertEquals(result, game.checkStatusGame());
+        assertEquals(resultWin, game.checkStatusGame());
     }
 
     /**
@@ -122,8 +118,7 @@ public class TickTackToeTest {
         game.setTable(new char[]{'_', '_', 'x'},
                 new char[]{'x', '_', 'x'},
                 new char[]{'o', 'o', 'o'});
-        String result = "You win";
-        assertEquals(result, game.checkStatusGame());
+        assertEquals(resultWin, game.checkStatusGame());
     }
 
     /**
@@ -135,8 +130,7 @@ public class TickTackToeTest {
         game.setTable(new char[]{'x', 'o', 'x'},
                 new char[]{'x', 'o', 'o'},
                 new char[]{'x', 'x', 'o'});
-        String result = "You win";
-        assertEquals(result, game.checkStatusGame());
+        assertEquals(resultWin, game.checkStatusGame());
     }
 
     /**
@@ -148,8 +142,7 @@ public class TickTackToeTest {
         game.setTable(new char[]{'_', '_', 'o'},
                 new char[]{'_', 'x', '_'},
                 new char[]{'x', '_', 'o'});
-        String result = "Game continues";
-        assertEquals(result, game.checkStatusGame());
+        assertEquals(resultContinues, game.checkStatusGame());
     }
 
     /**
@@ -161,8 +154,7 @@ public class TickTackToeTest {
         game.setTable(new char[]{'_', 'o', 'x'},
                 new char[]{'_', 'x', 'x'},
                 new char[]{'o', '_', '_'});
-        String result = "Game continues";
-        assertEquals(result, game.checkStatusGame());
+        assertEquals(resultContinues, game.checkStatusGame());
     }
 
     /**
@@ -174,8 +166,7 @@ public class TickTackToeTest {
         game.setTable(new char[]{'o', 'x', 'x'},
                 new char[]{'_', 'x', 'o'},
                 new char[]{'o', 'o', 'x'});
-        String result = "Game continues";
-        assertEquals(result, game.checkStatusGame());
+        assertEquals(resultContinues, game.checkStatusGame());
     }
 
     /**

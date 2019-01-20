@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.dennis.ticktacktoeGame;
+package org.fundacionjala.coding.dennis.ticktacktoegame;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -11,7 +11,6 @@ import java.util.Scanner;
 public class GamePlayTTT {
 
     private Scanner scanner;
-    private String position;
     private ToePlayer player1;
     private ToePlayer player2;
     private TickTackToe gameBoard;
@@ -76,6 +75,7 @@ public class GamePlayTTT {
           playerMessages();
          */
         putPosition(player);
+        gameBoard.pause();
         /**PRINT
           gameBoard.getTable();
          */
@@ -103,7 +103,7 @@ public class GamePlayTTT {
     private void putPosition(final ToePlayer player) {
         String resPutToken;
         do {
-            position = enterValidPosition();
+            String position = enterValidPosition();
             /**PRINT
               System.out.println("Don't put in an occuped position");
              */

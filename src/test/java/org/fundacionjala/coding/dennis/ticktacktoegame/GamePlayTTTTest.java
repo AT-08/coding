@@ -1,10 +1,10 @@
-package org.fundacionjala.coding.dennis.ticktacktoeGame;
+package org.fundacionjala.coding.dennis.ticktacktoegame;
 
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 import static org.junit.Assert.assertEquals;
 
@@ -53,7 +53,7 @@ public class GamePlayTTTTest {
     @Test
     public void gameWinnerWithEnteredData() {
         String input = "down";
-        InputStream in = new ByteArrayInputStream(input.getBytes(Charset.forName("UTF-8")));
+        InputStream in = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(in);
         ToePlayer player1 = new ToePlayer('x');
         ToePlayer player2 = new ToePlayer('o');
@@ -72,7 +72,7 @@ public class GamePlayTTTTest {
     @Test
     public void gameDrawWithEnteredData() {
         String input = "down right";
-        InputStream in = new ByteArrayInputStream(input.getBytes(Charset.forName("UTF-8")));
+        InputStream in = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(in);
         ToePlayer player1 = new ToePlayer('x');
         ToePlayer player2 = new ToePlayer('o');

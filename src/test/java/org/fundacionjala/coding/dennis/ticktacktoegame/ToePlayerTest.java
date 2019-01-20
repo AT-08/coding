@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.dennis.ticktacktoeGame;
+package org.fundacionjala.coding.dennis.ticktacktoegame;
 
 import org.junit.Test;
 
