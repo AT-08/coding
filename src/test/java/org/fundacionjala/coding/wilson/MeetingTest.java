@@ -13,11 +13,7 @@ public class MeetingTest {
      * @param exp names ordered
      */
     private static void testing(final String s, final String exp) {
-        System.out.println("Testing:\n" + s);
         String ans = Meeting.meeting(s);
-        System.out.println("Actual: " + ans);
-        System.out.println("Expect: " + exp);
-        System.out.println(ans.equals(exp));
         assertEquals(exp, ans);
     }
 
