@@ -21,8 +21,9 @@ public final class Meeting {
      */
     public static String meeting(final String s) {
         String[] guests = s.toUpperCase().split(";");
+        char delimiter = ':';
         for (int i = 0; i < guests.length; i++) {
-            int index = guests[i].indexOf(":");
+            int index = guests[i].indexOf(delimiter);
             guests[i] = "(" + guests[i].substring(index + 1) + ", " + guests[i].substring(0, index) + ")";
         }
         Arrays.sort(guests);
